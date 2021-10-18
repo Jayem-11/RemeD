@@ -19,7 +19,7 @@ const Complaints = () => {
 
     return (
         <div className='complaints-page'>
-            <h1>Complaints Page</h1>
+            <h1 style={{color: "#2a4365"}}>Complaints Page</h1>
             <form onSubmit={() => { onSubmit() }}>
                 <textarea className='area-box'
                     value={complain} onChange={(e) =>
