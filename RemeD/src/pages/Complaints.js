@@ -12,6 +12,7 @@ const Complaints = () => {
             alert('Please add complaint')
             return
         }
+        //do sth
         setComplain('')
 
     }
