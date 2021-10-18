@@ -4,12 +4,10 @@ import {
     FormControl,
     FormLabel,
     Input,
-    Checkbox,
     Stack,
     Link,
     Button,
     Heading,
-    Text,
     useColorModeValue,
   } from '@chakra-ui/react';
   import { useState } from 'react';
@@ -52,7 +50,7 @@ import {
                 <Input type="password" value={password} onChange={e => setPassword(e.target.value)} />
               </FormControl>
               <Stack spacing={5}>
-                    
+
                   <Link color={'blue.400'}>Forgot password?</Link>
                 <Link to='/signup' color={'blue.400'}>Don't have an account?</Link>
                 <Button
