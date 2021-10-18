@@ -1,17 +1,19 @@
-import Header from './components/Header';
-import Sidebar from './components/Sidebar';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import Footer from './components/Footer';
+import Complaints from './pages/Complaints';
 
 function App() {
+ 
   return (
-    <div className="App">
-      <Sidebar>
-        <Header />
-        {/* sidebar */}
-        {/* Body */}
-        {/* Footer */}
-      </Sidebar>
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route component={Complaints} path={'/complaints'} />
+        </Switch>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
