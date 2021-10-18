@@ -25,8 +25,9 @@ export default function Hero({
       justify={{ base: "center", md: "space-around", xl: "space-between" }}
       direction={{ base: "column-reverse", md: "row" }}
       wrap="no-wrap"
-      minH="70vh"
+      minH="85vh"
       px={8}
+      overflowY={'hidden'}
       {...rest}
     >
       <Stack

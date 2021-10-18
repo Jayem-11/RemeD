@@ -60,7 +60,7 @@ import {
                   _hover={{
                     bg: 'blue.500',
                   }}>
-                  Sign in
+                  Log in
                 </Button>
               </Stack>
             </Stack>
