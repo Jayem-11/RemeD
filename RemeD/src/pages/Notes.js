@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Header from "./components/Header";
-import Tasks from "./components/Tasks";
-import AddTask from "./components/AddTask";
-import './components/Notes.css'
+import Header from "../components/Notes/Header";
+import Tasks from "../components/Notes/Tasks";
+import AddTask from "../components/Notes/AddTask";
+import '../components/Notes/Notes.css'
 
 const Notes =() => {
   const [showAddTask, setShowAddTask] = useState(false)
