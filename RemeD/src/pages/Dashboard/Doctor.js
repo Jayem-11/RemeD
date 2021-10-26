@@ -40,18 +40,18 @@ const data = [{
 },
 {
     imageURL: thirdman,
-    name: 'Jayem',
+    name: 'Jon Snow',
 
 },
 {
     imageURL: thirdman,
-    name: 'Viny Gits',
+    name: 'Bella Mai',
 
 
 },
 {
     imageURL: thirdman,
-    name: 'Klaus Mikaelson',
+    name: 'Kiana Malone',
 
 
 },
@@ -61,7 +61,7 @@ const Doctor = () => {
     return (
         <>
             <Header />
-            <Box pl={'10%'} pr={'10%'} minH={'78.7vH'} >
+            <Box pt={'15px'} pl={'10%'} pr={'10%'} minH={'78.7vH'} >
 
                 <SimpleGrid columns={[2, null, 3]} spacing="40px">
 

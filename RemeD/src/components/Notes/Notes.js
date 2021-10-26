@@ -9,20 +9,20 @@ const Notes =() => {
   const [tasks, setTasks] = useState([
     {
     id : 3,
-    text: "Food shopping",
+    text: "Input Medical Details",
     day : "Feb 24 2021",
     reminder: true,
 },
 {
     id : 78,
-    text: "Sound city",
+    text: "Input Prescriptions",
     day : "September 3 2017",
-    reminder: false,
+    reminder: true,
 },
 
 {
     id : 4,
-    text: "Car shopping",
+    text: " Next Date Scheduled",
     day : "June 2 2022",
     reminder: true,
 }
@@ -51,11 +51,13 @@ const deleteTask = (id) => {
   setTasks(tasks.filter((task) => task.id !== id))
 }
   return (
+    <div className="lomo">
     <div className='container'>
      <Header onAdd={() => setShowAddTask (!showAddTask)} showAdd={showAddTask} />
     { showAddTask && <AddTask onAdd= {addTask} />}
      {tasks.length>0 ?<Tasks tasks= {tasks} onDelete={deleteTask} onToggle={togglereminder} />: 
      "No Tasks to display"}
+    </div>
     </div>
   );
 }
