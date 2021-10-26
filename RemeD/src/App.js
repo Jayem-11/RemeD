@@ -9,6 +9,10 @@ import Landing from './pages/Landing';
 import Doctor from './pages/Profiles/Doctor';
 import Patient from './pages/Profiles/Patient';
 import Doctorsignup from './pages/Doctorsignup';
+import PatientDash from './pages/Dashboard/Patient' ;
+import DoctorDash from './pages/Dashboard/Doctor' ;
+import Notes from './components/Notes/Notes';
+
 // import Dashboard from './pages/Dashboard';
 
 function App() {
@@ -25,7 +29,11 @@ function App() {
           <Route component={Patient} path={'/profile/patient'}/>
           <Route component={Doctorsignup} path={'/signup/doctor'}/>
           <Route component={Complaints} path={'/complaints'} />
-          {/* <Route component={Complaints} path={'/complaints'} /> */}
+          <Route component={PatientDash} path={'/dashboard/patient'} />
+          <Route component={DoctorDash} path={'/dashboard/doctor'}/>
+          <Route component={Notes} path={'/notes'}/>
+
+
         </Switch>
         {/* <Footer /> */}
         
