@@ -19,12 +19,12 @@ const Complaints = () => {
 
     return (
         <div className='complaints-page'>
-            <h1 style={{color: "#2a4365"}}>Complaints Page</h1>
+            <h1 style={{ fontWeight : "bold" , fontSize: "30px"}}>Complaints Page</h1>
             <form onSubmit={() => { onSubmit() }}>
                 <textarea className='area-box'
                     value={complain} onChange={(e) =>
                         setComplain(e.target.value)}
-                    placeholder='Enter complains'>
+                    placeholder='Enter complaints'>
                 </textarea>
 
                 <input type="submit" value="Send Complaint" className='btn btn-block' />

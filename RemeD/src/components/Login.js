@@ -11,6 +11,7 @@ import {
     useColorModeValue,
   } from '@chakra-ui/react';
   import { useState } from 'react';
+ 
 
 
   export default function Login() {
@@ -29,7 +30,8 @@ import {
         minH={'100vh'}
         align={'center'}
         justify={'center'}
-        bg={useColorModeValue('gray.50', 'gray.800')}>
+        bg={useColorModeValue('gray.50', 'gray.800')}
+        >
         <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
           <Stack align={'center'}>
             <Heading fontSize={'4xl'}>Welcome Back 🩺</Heading>
@@ -52,13 +54,13 @@ import {
               <Stack spacing={5}>
 
                   <Link color={'blue.400'}>Forgot password?</Link>
-                <Link to='/signup' color={'blue.400'}>Don't have an account?</Link>
+                <Link href='/signup' color={'blue.400'} >Don't have an account?</Link>
                 <Button
                     type='submit'
                   bg={'blue.400'}
                   color={'white'}
                   _hover={{
-                    bg: 'blue.500',
+                    bg: 'blue.600',
                   }}>
                   Log in
                 </Button>

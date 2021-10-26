@@ -41,10 +41,12 @@ export default function Hero({
           fontWeight="bold"
           color="primary.800"
           textAlign={["center", "center", "left", "left"]}
+          
         >
           {title}
         </Heading>
         <Heading
+
           as="h2"
           size="md"
           color="primary.800"
@@ -52,7 +54,7 @@ export default function Hero({
           fontWeight="normal"
           lineHeight={1.5}
           textAlign={["center", "center", "left", "left"]}
-        >
+          > 
           {subtitle}
         </Heading>
         <Link to={ctaLink}>
