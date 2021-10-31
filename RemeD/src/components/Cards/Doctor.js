@@ -1,4 +1,4 @@
-import { Box, Flex, useColorModeValue, HStack } from "@chakra-ui/react";
+import { Box, Flex, useColorModeValue, HStack, Heading, Text, Button } from "@chakra-ui/react";
 import { BsFillTelephoneFill, BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import { useHistory } from "react-router-dom";
 
