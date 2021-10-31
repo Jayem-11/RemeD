@@ -1,29 +1,17 @@
-import React from "react";
-import {
-  Box,
-  Flex,
-  useColorModeValue,
-  HStack,
-  Heading,
-  Button,
-  Tooltip,
-  VStack
-} from "@chakra-ui/react";
-import {
-  BsFillTelephoneFill,
-  BsStar,
-  BsStarFill,
-  BsStarHalf,
-  BsChatDots,
-} from "react-icons/bs";
+import {  Box, Flex, useColorModeValue, HStack, Heading, Button } from "@chakra-ui/react";
+import { BsFillTelephoneFill, BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import { useHistory } from "react-router-dom";
-import { CgProfile } from "react-icons/cg";
 
-const Card = ({ details }) => {
-  const history = useHistory();
+const Card = ({details}) => {
+ const history = useHistory()
 
   return (
-    <Flex w="full" alignItems="center" justifyContent="center">
+    <Flex
+     
+      w="full"
+      alignItems="center"
+      justifyContent="center"
+    >
       <Flex
         w="350px"
         mx="auto"
@@ -36,9 +24,7 @@ const Card = ({ details }) => {
           w={1 / 3}
           bgSize="cover"
           style={{
-            backgroundImage:
-              //Profile Pic
-              "url('https://images.unsplash.com/photo-1494726161322-5360d4d0eeae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80')",
+            backgroundImage:`url(${details.imageURL})`           
           }}
         ></Box>
 
@@ -51,40 +37,49 @@ const Card = ({ details }) => {
             {details.name}
           </Heading>
 
-          <VStack mt={3} alignItems="left">
-              <Button
-                px={2}
-                py={1}
-                variant="outline"
-                colorScheme="primary"
-                _hover={{
-                  bg: "blue.500",
-                  color: "white",
-                }}
-                rounded="lg"
-                // leftIcon={<CgProfile size="20px" />}
-                onClick={() => history.push("/profile/doctor")}
-              >
-                View Profile
-              </Button>
-              <Button
-                px={2}
-                py={1}
-                variant="outline"
-                color="gray.900"
-                rounded="lg"
-                _hover={{
-                  bg: "gray.300",
-                }}
-                _focus={{
-                  bg: "gray.400",
-                }}
-                // leftIcon={<BsChatDots size="20px" />}
-                onClick={() => history.push("/profile/doctor")}
-              >
-                Chat
-              </Button>
-          </VStack>
+        
+
+          <Flex mt={3} alignItems="center" justifyContent="space-between">
+          <Button
+              px={2}
+              py={1}
+              bg="white"
+              fontSize="xs"
+              color="gray.900"
+              fontWeight="bold"
+              rounded="lg"
+              textTransform="uppercase"
+              _hover={{
+                bg: "gray.200",
+              }}
+              _focus={{
+                bg: "gray.400",
+              }}
+              onClick={ () => history.push('/chat')}
+            >
+              Go to Chat
+            </Button>
+            <Button
+              px={2}
+              py={1}
+              bg="white"
+              fontSize="xs"
+              color="gray.900"
+              fontWeight="bold"
+              rounded="lg"
+              textTransform="uppercase"
+              _hover={{
+                bg: "gray.200",
+              }}
+              _focus={{
+                bg: "gray.400",
+              }}
+              onClick={ () => history.push('/profile/patient')}
+            >
+              View Details
+            </Button>
+            
+          </Flex>
         </Box>
       </Flex>
     </Flex>
