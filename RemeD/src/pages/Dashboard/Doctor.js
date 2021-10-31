@@ -1,6 +1,12 @@
-import { InputGroup, InputLeftElement, Input, Box, SimpleGrid } from "@chakra-ui/react";
-import { AiOutlineSearch } from 'react-icons/ai'
-import Card from "../../components/Cards/PatientCard";
+import {
+  InputGroup,
+  InputLeftElement,
+  Input,
+  Box,
+  SimpleGrid,
+} from "@chakra-ui/react";
+import { AiOutlineSearch } from "react-icons/ai";
+import Card from "../../components/Cards/Patient";
 import Header from "../../components/Sections/Header";
 import Footer from "../../components/Sections/Footer";
 import thirdman from '../../assets/thirdman.jpg';
