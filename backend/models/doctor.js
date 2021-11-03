@@ -6,10 +6,18 @@ const docSchema = new mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
-    specialization:{
+    speciality:{
         type: String,
         required:true
     },
+    subSpeciality:[
+        {
+            type: String,
+            minLength: 1,
+            maxLength: 255,
+            trim: true
+        }
+    ],
     institution:{
         type: String,
         required: true
@@ -29,7 +37,33 @@ const docSchema = new mongoose.Schema({
                 ref:'User'
             }
         }
-    ]
+    ],
+    title:{
+        type: String,
+        enum: ['Mr', 'Miss', 'Dr', 'Rev', 'Sir', 'Ms', 'Mrs'],
+        required: true,
+        trim: true,
+    },
+    gender:{
+        type: String,
+        required:[true, "Gender is required"],
+        trim: true,
+    },
+    education: [
+        {
+            type: String,
+            minLength:1,
+            maxLegth: 255
+        }
+    ],
+    rating: {
+        type: Number,
+        min: 1,
+        max:5
+    },
+    profileImage: {
+        type: String,
+    }
 }, {
     timestamps: true
 })

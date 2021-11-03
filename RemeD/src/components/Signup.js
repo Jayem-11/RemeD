@@ -12,8 +12,8 @@ import {
 export default function Signup() {
 const history = useHistory();
   const handleClick = () => history.push('/signup/doctor')
+  const handleClicks = () => history.push('/signup/patient')
   
-
   return (
     <>
         
@@ -54,6 +54,7 @@ const history = useHistory();
                     Register as Doctor
                 </Button>
                 <Button
+                    onClick={handleClicks}
                     w={'300px'}
                     h={'40px'}
                     type='submit'
