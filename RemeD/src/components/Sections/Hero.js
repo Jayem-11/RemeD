@@ -25,8 +25,9 @@ export default function Hero({
       justify={{ base: "center", md: "space-around", xl: "space-between" }}
       direction={{ base: "column-reverse", md: "row" }}
       wrap="no-wrap"
-      minH="70vh"
+      minH="85vh"
       px={8}
+      overflowY={'hidden'}
       {...rest}
     >
       <Stack
@@ -40,10 +41,12 @@ export default function Hero({
           fontWeight="bold"
           color="primary.800"
           textAlign={["center", "center", "left", "left"]}
+          
         >
           {title}
         </Heading>
         <Heading
+
           as="h2"
           size="md"
           color="primary.800"
@@ -51,7 +54,7 @@ export default function Hero({
           fontWeight="normal"
           lineHeight={1.5}
           textAlign={["center", "center", "left", "left"]}
-        >
+          > 
           {subtitle}
         </Heading>
         <Link to={ctaLink}>

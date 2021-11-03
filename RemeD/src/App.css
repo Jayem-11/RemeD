@@ -1,33 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
 .App{
-  background-color: azure;
+  /* background-color: azure; */
+  background-color: rgb(238, 238, 238);
   background-attachment: fixed;
-  background-image: linear-gradient(rgba(76, 125, 216, 0.747), rgba(8, 223, 252, 0.918));
   background-size: 100%;
-               
+  font-family: 'Poppins', sans-serif;            
 
 }
 
+.landBox{
+  background-image: linear-gradient(rgba(76, 125, 216, 0.747), rgba(8, 223, 252, 0.918)), 
+  url('https://www.shutterstock.com/image-photo/blurred-medical-background-modern-hospital-hall-1495426337') ;
+  
+}
+
 .complaints-page {
+    background-color: rgb(238, 238, 238);
     margin: auto;
     width: 100%;
     text-align: center;
     padding-top: 20px;
     min-height: 100vh;
-    background-color: rgb(88, 153, 214);
+    
+    
 }
 
 .area-box{
     
-    margin-top: 50px;
+    margin-top: 80px;
     height: 300px;
     width: 700px; 
-    margin-bottom: 30px;
-}
+    margin-bottom: 60px;
+    border: 1px solid rgb(43, 43, 43);
+    border-radius: 10px;
+
+  }
 .btn {
     display: inline-block;
-    /* background: #00b5d8; */
+    background: black;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -80,3 +91,6 @@
                 padding-left: 0;
                 margin-left: 0;
             }
+
+
+    
