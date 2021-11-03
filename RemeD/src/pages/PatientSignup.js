@@ -16,6 +16,7 @@ import {
     
 
     return (
+      
       <Flex width="full" align="center" justifyContent="center" >
         <Box mb={6} mr={30} mt={1} p={8} w="350px" borderWidth={2} borderRadius={8} boxShadow="lg">
           <Box textAlign="center">
@@ -48,6 +49,7 @@ import {
          </Box>
         </Box>
       </Flex>
+      
      );
               
     }
