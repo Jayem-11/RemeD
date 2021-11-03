@@ -94,8 +94,8 @@ const Doctor = () => {
                 bg: "blue.500",
                 color: "white",
               }}
-              onClick={() => history.push("/dashboard/doctor")}
-              rightIcon={<GiExitDoor />}
+              onClick={() => history.goBack()}
+              // rightIcon={<GiExitDoor color="black" style={{border: 'none'}} />}
             >
               Back to Dashboard
             </Button>
@@ -163,7 +163,7 @@ const Doctor = () => {
                 _hover={{
                   bg: "blue.400",
                 }}
-                leftIcon={<BsChatDotsFill />}
+                // leftIcon={<BsChatDotsFill bgColor={'blue'} />}
                 onClick={() => history.push("/chat")}
               >
                 Chat

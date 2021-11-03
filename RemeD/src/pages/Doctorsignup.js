@@ -17,6 +17,9 @@ import {
 } from '@chakra-ui/react';
 import { useForm } from "react-hook-form";
 import React, { useState } from 'react';
+import { RiArrowGoBackFill } from "react-icons/ri";
+import { useHistory } from "react-router-dom";
+
 
 const avatars = [
   {
@@ -42,7 +45,8 @@ const avatars = [
 ];
 
 
-export default function Doctorsignup() {
+export default function Doctorsignup()
+ {
   const { register, handleSubmit } = useForm();
 
 //   const [userName, setUserName] = useState('');
@@ -57,10 +61,13 @@ export default function Doctorsignup() {
 
 // }
 
+const history = useHistory();
+  const handleclick = () => history.push('/dashboard/doctor')
+
   return (
   <div >
     <Heading  
-              pt={'60px'}
+              pt={'30px'}
               mb={'10px'}
               textAlign={'center'}
               color={'gray.800'}
@@ -76,14 +83,26 @@ export default function Doctorsignup() {
                 bgClip="text">
                 !
               </Text>
+
       </Heading>
+      <Button 
+        onClick={() => history.goBack()}
+       _hover={{
+                bg: "gray.600",
+                color: "white",
+              }} 
+               ml={'85%'} mt={4}  type="submit" color={'white'} bgColor={'black'} >
+                 {/* <RiArrowGoBackFill  size={20} bgColor={'transparent'} /> */}
+              Back
+            </Button>
+
     <Box position={'relative'}  minH={'96.3vH'} >
       <Container
         as={SimpleGrid}
         maxW={'7xl'}
         columns={{ base: 1, md: 2 }}
         spacing={{ base: 10, lg: 32 }}
-        mt={'60px'}
+        mt={'20px'}
         
         // py={{ base: 10, sm: 20, lg: 32 }}
         >
@@ -227,7 +246,7 @@ export default function Doctorsignup() {
                <Button  bg={'black'} color={'white'} _hover={{
                   bg: 'gray.900',
                 }} >
-                Upload CV
+                Upload Licence
                 
               </Button>
 
@@ -239,6 +258,7 @@ export default function Doctorsignup() {
                  />
 
             <Button
+                onClick={handleclick}
                 w={'150px'}  
                 h={'40px'}
                 mt={'17px'}
@@ -248,14 +268,16 @@ export default function Doctorsignup() {
                 color={'white'}
                 _hover={{
                   bg: 'gray.900',
-                }}>
+                }}
+                
+                >
             
               Submit
             </Button>
             </form>
           </Box>
           form
-        </Stack>
+        </Stack >
       </Container>
     </Box>
     </div>
