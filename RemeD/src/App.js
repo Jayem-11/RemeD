@@ -4,6 +4,7 @@ import Footer from './components/Sections/Footer';
 import Complaints from './pages/Complaints';
 import Header from './components/Sections/Header';
 import Landing from './pages/Landing';
+import PatientSignup from './pages/PatientSignup';
 
 function App() {
 
@@ -14,7 +15,8 @@ function App() {
         <Switch>
           <Route exact path={'/'} component={Landing} />
           <Route path={'/complaints'} component={Complaints} />
-        </Switch>
+          <Route path={'/patient'} component={PatientSignup} />
+          </Switch>
         <Footer />
       </div>
     </Router>
