@@ -14,7 +14,7 @@ import {
  
 
 
-  export default function Login() {
+   const Login =()=> {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const onSubmit = (e) => {
@@ -72,3 +72,5 @@ import {
       </Flex>
     );
   }
+
+  export default Login
