@@ -1,56 +1,74 @@
-import { InputGroup, InputLeftElement, Input, Box, SimpleGrid } from "@chakra-ui/react";
-import { AiOutlineSearch } from 'react-icons/ai'
-import Card from "../../components/Cards/PatientCard";
+import {
+  InputGroup,
+  InputLeftElement,
+  Input,
+  Box,
+  SimpleGrid,
+} from "@chakra-ui/react";
+import { AiOutlineSearch } from "react-icons/ai";
+import Card from "../../components/Cards/Patient";
 import Header from "../../components/Sections/Header";
 import Footer from "../../components/Sections/Footer";
 import thirdman from '../../assets/thirdman.jpg';
+import berke from '../../assets/berke.jpg';
+import shvets from '../../assets/shvets.jpg';
+import kindel from '../../assets/kindel.jpg';
+import reafon from '../../assets/reafon.jpg';
+import spencer from '../../assets/spencer.jpg';
+import mich from '../../assets/mich.jpg';
+import cottonbro from '../../assets/cottonbro.jpg';
+import bro from '../../assets/bro.jpg';
+import plot from '../../assets/plot.jpg';
+
+
+
 
 
 const data = [{
-    imageURL: "https://images.unsplash.com/photo-1494726161322-5360d4d0eeae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
-    name: 'Jane Doe',
+    imageURL: kindel,
+    name: 'James Leroy',
 
 
 },
 {
-    imageURL: thirdman,
-    name: 'Sony Lomo',
+    imageURL: berke,
+    name: 'Bella Ahmed',
 },
 {
-    imageURL: thirdman,
-    name: 'Limpy Kamami',
+    imageURL: shvets,
+    name: 'Grace Anya',
 
 },
 {
-    imageURL: thirdman,
-    name: 'Jayem',
+    imageURL: spencer,
+    name: 'Spencer Brown',
 
 },
 {
-    imageURL: thirdman,
-    name: 'Viny Gits',
+    imageURL: reafon,
+    name: 'Viny Guliano',
 
 
 },
 {
-    imageURL: thirdman,
+    imageURL: mich,
     name: 'Klaus Mikaelson',
 
 
 },
 {
-    imageURL: thirdman,
+    imageURL: cottonbro,
     name: 'Jon Snow',
 
 },
 {
-    imageURL: thirdman,
+    imageURL: bro,
     name: 'Bella Mai',
 
 
 },
 {
-    imageURL: thirdman,
+    imageURL: plot,
     name: 'Kiana Malone',
 
 

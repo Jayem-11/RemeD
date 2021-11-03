@@ -1,10 +1,8 @@
 //responsive header component
-import React from "react"
-import { Link } from "react-router-dom"
-import { Box, Flex, Text, Button, } from "@chakra-ui/react"
-import Logo from "../../assets/Logo" 
- 
-
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Box, Flex, Text, Button } from "@chakra-ui/react";
+import Logo from "../../assets/Logo";
 
 const CloseIcon = () => (
   <svg width="24" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
@@ -29,7 +27,7 @@ const MenuIcon = () => (
 );
 
 const MenuItems = (props) => {
-  const { children, isLast, to = "/", ...rest } = props
+  const { children, isLast, to = "/", ...rest } = props;
   return (
     <Text
       mb={{ base: isLast ? 0 : 8, sm: 0 }}
@@ -39,13 +37,13 @@ const MenuItems = (props) => {
     >
       <Link to={to}>{children}</Link>
     </Text>
-  )
-}
- 
+  );
+};
+
 const Header = (props) => {
-  const [show, setShow] = React.useState(false)
-  const toggleMenu = () => setShow(!show)
- 
+  const [show, setShow] = useState(false);
+  const toggleMenu = () => setShow(!show);
+
   return (
     <Flex
       as="nav"
@@ -65,11 +63,11 @@ const Header = (props) => {
           color={["white", "white", "primary.500", "primary.500"]}
         />
       </Flex>
- 
+
       <Box display={{ base: "block", md: "none" }} onClick={toggleMenu}>
         {show ? <CloseIcon /> : <MenuIcon />}
       </Box>
- 
+
       <Box
         display={{ base: show ? "block" : "none", md: "block" }}
         flexBasis={{ base: "100%", md: "auto" }}
@@ -80,30 +78,21 @@ const Header = (props) => {
           direction={["column", "row", "row", "row"]}
           pt={[4, 4, 0, 0]}
         >
-          <MenuItems to="/">AboutUs</MenuItems>
-          <MenuItems to="/login">Login </MenuItems>
-          <MenuItems to="/signup" isLast>
+          <MenuItems to="/dashboard/doctor">Dashboard</MenuItems>
+          <MenuItems to="/chats">Chats </MenuItems>
+          <MenuItems to="/login" isLast>
             <Button
               size="sm"
               rounded="md"
-              color={["primary.500", "primary.500", "white", "white"]}
-              bg={["white", "white", "primary.500", "primary.500"]}
-              _hover={{
-                bg: [
-                  "primary.100",
-                  "primary.100",
-                  "primary.600",
-                  "primary.600",
-                ],
-              }}
+              colorScheme="primary"
             >
-              Create Account
+              Logout
             </Button>
           </MenuItems>
         </Flex>
       </Box>
     </Flex>
-  )
-}
- 
-export default Header
+  );
+};
+
+export default Header;

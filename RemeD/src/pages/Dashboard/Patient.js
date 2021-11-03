@@ -1,14 +1,20 @@
 import {InputGroup, InputLeftElement, Input, Box,SimpleGrid} from "@chakra-ui/react";
 import {AiOutlineSearch} from 'react-icons/ai'
-import Card from "../../components/Cards/DoctorCard";
+import Card from "../../components/Cards/Doctor";
 import Header from "../../components/Sections/Header";
 import Footer from "../../components/Sections/Footer";
 import thirdman from '../../assets/thirdman.jpg';
+import tima from '../../assets/tima.jpg';
+import laura from '../../assets/laura.jpg';
+import miro from '../../assets/miro.jpg';
+import shenko from '../../assets/shenko.jpg';
+import sales from '../../assets/sales.jpg';
+
 
 
 const data = [{
-    imageURL:  "https://images.unsplash.com/photo-1494726161322-5360d4d0eeae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
-    name: 'Jane Doe',
+    imageURL:  tima,
+    name: 'John Michael',
     speciality: 'Oncologist',
     institution: 'Nairobi Hospital',
 
@@ -21,29 +27,29 @@ const data = [{
 
 },
 {
-    imageURL: thirdman,
+    imageURL: laura,
     name: 'Limpy Kamami',
     speciality: 'Oncologist',
     institution: 'Nairobi Hospital',
 
 },
 {
-    imageURL: thirdman,
-    name: 'Jayem',
+    imageURL: miro,
+    name: 'viny Gits',
     speciality: 'Oncologist',
     institution: 'Nairobi Hospital',
 
 },
 {
-    imageURL: thirdman,
-    name: 'Viny Gits',
+    imageURL: shenko,
+    name: 'Sandra Sloan',
     speciality: 'Oncologist',
     institution: 'Nairobi Hospital',
 
 },
 {
-    imageURL: thirdman,
-    name: 'Klaus Mikaelson',
+    imageURL: sales,
+    name: 'Collin Davis',
     speciality: 'Oncologist',
     institution: 'Nairobi Hospital',
 
@@ -69,7 +75,6 @@ const Patient = () => {
                 <Card details = {doc} />
             ) )} 
             </SimpleGrid>
-            
         </Box>
         <Footer/>
         </>
