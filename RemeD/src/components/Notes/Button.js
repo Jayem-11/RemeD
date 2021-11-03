@@ -1,23 +1,30 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
+import { Button } from "@chakra-ui/button";
 
-const Button = ({color, text, onClick}) => {
-    return (
-        <div>
-            <button  onClick={onClick} style={{backgroundColor : color}} className='btn '> {text} </button>
-        </div>
-    )
-}
+const NoteButton = ({ color, text, onClick }) => {
+  return (
+    <div>
+      <Button
+        onClick={onClick}
+        style={{ backgroundColor: color }}
+        m="5px"
+        color="white"
+      >
+        {" "}
+        {text}{" "}
+      </Button>
+    </div>
+  );
+};
 
-Button.defaultProps = {
-    color : "steelblue"
-}
+NoteButton.defaultProps = {
+  color: "steelblue",
+};
 
-Button.propTypes ={
-    color : PropTypes.string,
-    text : PropTypes.string.isRequired,
-    onClick : PropTypes.func
-}
+NoteButton.propTypes = {
+  color: PropTypes.string,
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+};
 
-export default Button
-
-
+export default NoteButton;
