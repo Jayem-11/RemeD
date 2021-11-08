@@ -6,11 +6,14 @@
   background-attachment: fixed;
   background-size: 100%;
   font-family: 'Poppins', sans-serif;            
+ 
+}
+
+.landBox{
   background-image: linear-gradient(rgba(76, 125, 216, 0.747), rgba(8, 223, 252, 0.918)), 
   url('https://www.shutterstock.com/image-photo/blurred-medical-background-modern-hospital-hall-1495426337') ;
   /*  */
 }
-
 
 .complaints-page {
     background-color: rgb(238, 238, 238);
