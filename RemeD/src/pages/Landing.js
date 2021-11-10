@@ -5,7 +5,7 @@ import Hero from "../components/Sections/Hero";
 export default function Landing() {
 
   return (
-    <div className="App">
+    <div className="landBox">
       <Header/>
       <Hero 
         title="The Greatest Wealth is Health"

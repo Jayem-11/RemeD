@@ -93,7 +93,7 @@ const history = useHistory();
               }} 
                ml={'85%'} mt={4}  type="submit" color={'white'} bgColor={'black'} >
                  {/* <RiArrowGoBackFill  size={20} bgColor={'transparent'} /> */}
-              Back
+              « Back
             </Button>
 
     <Box position={'relative'}  minH={'96.3vH'} >
