@@ -17,6 +17,8 @@ import {
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import React, { useState } from "react";
+import { RiArrowGoBackFill } from "react-icons/ri";
+import { useHistory } from "react-router-dom";
 
 const avatars = [
   {
@@ -41,7 +43,7 @@ const avatars = [
   },
 ];
 
-const DoctorSignup = () => {
+ const DoctorSignup =() =>{
   const { register, handleSubmit } = useForm();
 
   //   const [userName, setUserName] = useState('');
@@ -55,10 +57,13 @@ const DoctorSignup = () => {
 
   // }
 
+  const history = useHistory();
+  const handleclick = () => history.push("/dashboard/doctor");
+
   return (
     <div>
       <Heading
-        pt={"60px"}
+        pt={"30px"}
         mb={"10px"}
         textAlign={"center"}
         color={"gray.800"}
@@ -76,13 +81,28 @@ const DoctorSignup = () => {
           !
         </Text>
       </Heading>
+      <Button
+        onClick={() => history.goBack()}
+        _hover={{
+          bg: "gray.600",
+          color: "white",
+        }}
+        ml={"85%"}
+        mt={4}
+        type="submit"
+        color={"white"}
+        bgColor={"black"}
+      >
+        {/* <RiArrowGoBackFill  size={20} bgColor={'transparent'} /> */}« Back
+      </Button>
+
       <Box position={"relative"} minH={"96.3vH"}>
         <Container
           as={SimpleGrid}
           maxW={"7xl"}
           columns={{ base: 1, md: 2 }}
           spacing={{ base: 10, lg: 32 }}
-          mt={"60px"}
+          mt={"20px"}
 
           // py={{ base: 10, sm: 20, lg: 32 }}
         >
@@ -224,7 +244,7 @@ const DoctorSignup = () => {
                       bg: "gray.900",
                     }}
                   >
-                    Upload CV
+                    Upload Licence
                   </Button>
                 </Stack>
                 <input
@@ -234,6 +254,7 @@ const DoctorSignup = () => {
                 />
 
                 <Button
+                  onClick={handleclick}
                   w={"150px"}
                   h={"40px"}
                   mt={"17px"}
@@ -255,5 +276,5 @@ const DoctorSignup = () => {
       </Box>
     </div>
   );
-};
-export default DoctorSignup;
+}
+export default DoctorSignup

@@ -66,7 +66,7 @@ const Patient = () => {
                     pointerEvents="none"
                     children={<AiOutlineSearch />}
                 />
-                <Input type="tel" placeholder="Search..." />
+                <Input bg="inherit" variant="flushed" border="none" type="tel" placeholder="Search..." />
 
             </InputGroup>
             <SimpleGrid  columns={[2, null, 3]} spacing="40px">

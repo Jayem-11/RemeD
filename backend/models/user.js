@@ -2,15 +2,14 @@ import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs'
 
 const userSchema = new mongoose.Schema({
-    name:{
+    firstname:{
         type:String,
-        required:[true, "Name is required"],
+        required:[true, "Firstname is required"],
         trim: true
     },
-    username:{
-        type:String,
-        required:[true, "Username is required"],
-        trim: true
+    lastname:{
+        type: String,
+        required: [true, 'Lastname is required']
     },
     password:{
         type: String,
@@ -23,10 +22,46 @@ const userSchema = new mongoose.Schema({
         unique: true,
         trim: true
     },
-    isProfileAdded:{
+    isDoctor:{
         type: Boolean,
         default: false
-    }
+    },
+    doctorInfo:{
+        phoneno:{
+            type: String,
+            trim: true
+        },
+        speciality:{
+            type: String,
+            trim:true
+        },
+        institution:{
+            type: String,
+            trim:true
+        },
+        license:{
+            type: String,
+            trim: true
+        },
+        address: {
+            type: String,
+            trim: true
+        },
+    },
+    patientInfo:{
+        phoneno: {
+            type: String,
+            trim: true
+        },
+        gender:{
+            type: String,
+            enum:['Male', 'Female', 'Others'],
+        },
+        bloodType:{
+            type: String,
+            enum:['A' ,'AB', 'B', 'O']
+        },
+    },
 },{
     timestamps: true
 })

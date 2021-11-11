@@ -17,7 +17,7 @@ const Hero = ({ title, subtitle, image, ctaLink, ctaText, ...rest }) => {
       justify={{ base: "center", md: "space-around", xl: "space-between" }}
       direction={{ base: "column-reverse", md: "row" }}
       wrap="no-wrap"
-      minH="80vh"
+      minH="90vh"
       px={8}
       overflowY={"hidden"}
       {...rest}
