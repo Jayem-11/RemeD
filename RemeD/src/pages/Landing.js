@@ -6,9 +6,7 @@ import DiseaseCard from "../components/Cards/DiseaseCard";
 import { SpecialityData } from '../data/speciality'
 import { DiseasesData } from "../data/diseases";
 
-const landBox={
-    
-}
+
 
 export default function Landing() {
 

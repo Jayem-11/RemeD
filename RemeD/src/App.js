@@ -16,9 +16,34 @@ import PatientNotes from "./pages/PatientNotes";
 import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
 
+
 // import Dashboard from './pages/Dashboard';
 
 function App() {
+<<<<<<< HEAD
+    return (
+        <Router>
+            <div className="App">
+                {/* <Header /> */}
+                <Switch>
+                    <Route component={Landing} exact path={"/"} />
+                    <Route component={Login} path={"/login"} />
+                    <Route component={Signup} exact path={"/signup"} />
+                    <Route component={Doctor} path={"/profile/doctor"} />
+                    <Route component={Patient} path={"/profile/patient"} />
+                    <Route component={Doctorsignup} path={"/signup/doctor"} />
+                    <Route component={PatientSignup} path={"/signup/patient"} />
+                    <Route component={Complaints} path={"/complaints"} />
+                    <Route component={PatientDash} path={"/dashboard/patient"} />
+                    <Route component={DoctorDash} path={"/dashboard/doctor"} />
+                    <Route component={PatientNotes} path={"/notes"} />
+                    <Route component={NotFound} exact path="*" />
+                </Switch>
+                {/* <Footer /> */}
+            </div>
+        </Router>
+    );
+=======
   return (
     <Router>
       <div className="App">
@@ -42,6 +67,7 @@ function App() {
       </div>
     </Router>
   );
+>>>>>>> fe6cd8a3e153517756b4f35309baa46d2ed731ee
 }
 
 export default App;
