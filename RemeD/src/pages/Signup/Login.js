@@ -19,6 +19,14 @@ import { useFormik } from "formik"
 import { loginSchema } from '../utils/validation'
 
 
+<<<<<<< HEAD:RemeD/src/components/Login.js
+=======
+   const Login =()=> {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const onSubmit = (e) => {
+        e.preventDefault()
+>>>>>>> fe6cd8a3e153517756b4f35309baa46d2ed731ee:RemeD/src/pages/Signup/Login.js
 
 const initialState = {
     email: "",
@@ -142,4 +150,10 @@ export default function Login() {
             </Stack>
         </Flex>
     );
+<<<<<<< HEAD:RemeD/src/components/Login.js
 }
+=======
+  }
+
+  export default Login
+>>>>>>> fe6cd8a3e153517756b4f35309baa46d2ed731ee:RemeD/src/pages/Signup/Login.js
