@@ -2,6 +2,7 @@ import User from '../models/user.js'
 import { OAuth2Client } from 'google-auth-library'
 import { nanoid } from 'nanoid'
 import config from '../config/config.js'
+import generateToken from '../utils/generateToken.js'
 
 const client = new OAuth2Client(config)
 
@@ -19,9 +20,10 @@ const signin = async (req, res) => {
     if (user && (await user.matchPassword(password))) {
         return res.status(200).json({
             _id: user._id,
-            name: user.name,
+            firstname: user.firstname,
+            lastname: user.lastname,
             email: user.email,
-            username: user.username,
+            isDoctor: user.isDoctor,
             token: generateToken(user._id)
         })
     } else {
@@ -39,26 +41,25 @@ const signin = async (req, res) => {
 
 
 const signup = async (req, res) => {
-    const { name, username, password, email } = req.body;
 
-    const userExists = await User.findOne({ email });
+    const userExists = await User.findOne({ email: req.body.email });
 
     if (userExists) {
+        console.log('mUserv')
         return res.status(400).json({
             message: "Email already taken"
         })
     }
 
-    const user = await User.create({
-        name, username, password, email
-    })
+    const user = await User.create(req.body)
 
     if (user) {
         return res.status(200).json({
             _id: user._id,
-            name: user.name,
+            firstname: user.firstname,
+            lastname: user.lastname,
             email: user.email,
-            username: user.username,
+            isDoctor: user.isDoctor,
             token: generateToken(user._id)
         })
     } else {
@@ -74,29 +75,46 @@ const signup = async (req, res) => {
  * @access  Public
  */
 
-const authententicateGoogle = async (req, res) => {
+const authenticateGoogle = async (req, res) => {
     const { tokenId } = req.body;
 
-    client.verifyIdToken({ idToken: tokenId, audience: config.googleCloud }).then((response) => {
-        const { name, email, given_name } = response.payload;
+    client.verifyIdToken({ idToken: tokenId, audience: config.googleCloud }).then(async(response) => {
+        const { email, given_name, family_name } = response.payload;
 
         const userExists = await User.findOne({ email });
 
         if (userExists) {
             return res.status(200).json({
                 _id: userExists._id,
-                name: userExist.name,
+                firstname: userExist.firstname,
+                lastname: userExist.lastname,
                 email: userExists.email,
-                username: userExists.username,
                 token: generateToken(userExists._id)
             })
         } else {
             // Since the user doesnt exist in the database, the user is saved in the database
-            const userObj = {
-                name: name,
-                email: email,
-                username: given_name,
-                password: nanoid(10)
+
+            // confirm which type of user is being saved in the database
+            const { isDoctor } = req.body.userData;
+            const { userData } = req.body;
+            if (isDoctor) {
+                var userObj = {
+                    firstname: given_name,
+                    lastname: family_name,
+                    email: email,
+                    password: nanoid(10),
+                    isDoctor: isDoctor,
+                    doctorInfo: userData.doctorInfo
+                }
+            } else {
+                var userObj = {
+                    firstname: given_name,
+                    lastname: family_name,
+                    email: email,
+                    password: nanoid(10),
+                    isDoctor: isDoctor,
+                    patientInfo: userData.patientInfo
+                }
             }
 
             let newUser = await User.create(userObj)
@@ -105,9 +123,10 @@ const authententicateGoogle = async (req, res) => {
                 let result = await newUser.save();
                 return res.status(200).json({
                     _id: result._id,
-                    name: result.name,
-                    username: result.username,
+                    firstname: result.firstname,
+                    lastname: result.lastname,
                     email: result.email,
+                    isDoctor: result.isDoctor,
                     token: generateToken(result._id)
                 })
             } catch (err) {
@@ -125,20 +144,86 @@ const authententicateGoogle = async (req, res) => {
     })
 }
 
-const getUserById = async (req, res) => {
-    const { userId } = req.params;
 
-    const user = await User.findById(userId);
+/**
+ * @desc    Return a given user profile
+ * @access  Private /User
+ * @path    /api/users/profile/:userId
+ */
 
-    if (user) {
+const getUserProfile = async(req, res) => {
+    try{
+        let user = req.user;
         return res.status(200).json(user)
-    } else {
-        return res.status(404).json({
-            message: "User not found"
+    }catch(err){
+        console.log(err)
+        return res.status(400).json({
+            message: `An error was encountered`
         })
     }
 }
 
+/**
+ * @desc    Fetch all the doctors
+ * @access  Private /User
+ * @path    /api/users/list/doctors
+ */
+
+const listDoctors = async(req, res) => {
+    try{
+        let doctors = await User.find({isDoctor: true})
+        return res.status(200).json(doctors)
+    }catch(err){
+        console.log(err)
+        return res.status(400).json({
+            message: 'An error was encountered'
+        })
+    }
+}
+
+/**
+ * @desc    Fetch all the patients
+ * @access  Private /User
+ * @path    /api/users/list/patients
+ */
+
+const listPatients = async(req, res) => {
+    try{
+        let patients = await User.find({isDoctor: false})
+        return res.status(200).json(patients)
+    }catch(err){
+        console.log(err)
+        return res.status(400).json({
+            message: 'An error was encountered'
+        })
+    }
+}
+
+/**
+ * @desc    Fetch the user details by id and append the details to req
+ */
+
+const userByID = async (req, res, next, id) => {
+    try {
+        let user = await User.findById(id)
+
+        if (!user) {
+            return res.status(404).json({
+                message: `User not found`
+            })
+        }
+
+        req.user = user;
+        next()
+    } catch (err) {
+        console.log(err)
+        return res.status(400).json({ message: `Could not retrieve due to ${err}` })
+    }
+}
+
+
+
+
 export {
-    signin, signup, authententicateGoogle, getUserById
+    signin, signup, authenticateGoogle, getUserProfile, listDoctors, listPatients, userByID
 }

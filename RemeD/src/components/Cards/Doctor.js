@@ -2,6 +2,7 @@ import { Box, Flex, useColorModeValue, HStack, Heading, Text, Button } from "@ch
 import { BsFillTelephoneFill, BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import { useHistory } from "react-router-dom";
 
+
 const Card = ({details}) => {
  const history = useHistory()
 
