@@ -30,7 +30,6 @@ app.use(express.json())
 app.use(cors())
 app.use('/api/users', user)
 
-
 const __dirname = path.resolve()
 
 if(config.env === 'production'){
