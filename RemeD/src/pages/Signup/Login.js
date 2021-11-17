@@ -13,10 +13,10 @@ import {
     useToast,
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
-import auth from "../services/auth";
-import { signin } from "../services/user";
+import auth from "../../services/auth";
+import { signin } from "../../services/user";
 import { useFormik } from "formik"
-import { loginSchema } from '../utils/validation'
+import { loginSchema } from '../../utils/validation'
 
 
 
