@@ -16,36 +16,37 @@ import PatientNotes from "./pages/PatientNotes";
 import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
 import Faqs from "./pages/Faqs";
+import Payment from "./pages/Payment";
 
 
 // import Dashboard from './pages/Dashboard';
 
 function App() {
-
-  return (
-    <Router>
-      <div className="App">
-        {/* <Header /> */}
-        <Switch>
-          <Route component={Landing} exact path={"/"} />
-          <Route component={Login} path={"/login"} />
-          <Route component={Signup} exact path={"/signup"} />
-          <Route component={Doctor} path={"/profile/doctor"} />
-          <Route component={Patient} path={"/profile/patient"} />
-          <Route component={DoctorSignup} path={"/signup/doctor"} />
-          <Route component={PatientSignup} path={"/signup/patient"} />
-          <Route component={Complaints} path={"/complaints"} />
-          <Route component={Faqs} path={"/faqs"} />
-          <Route component={PatientDash} path={"/dashboard/patient"} />
-          <Route component={DoctorDash} path={"/dashboard/doctor"} />
-          <Route component={PatientNotes} path={"/notes"} />
-          <Route component={Chat} path={"/chat"} />
-          <Route component={NotFound} exact path="*" />
-        </Switch>
-        {/* <Footer /> */}
-      </div>
-    </Router>
-  );
+    return (
+        <Router>
+            <div className="App">
+                {/* <Header /> */}
+                <Switch>
+                    <Route component={Landing} exact path={"/"} />
+                    <Route component={Login} path={"/login"} />
+                    <Route component={Signup} exact path={"/signup"} />
+                    <Route component={Doctor} path={"/profile/doctor"} />
+                    <Route component={Patient} path={"/profile/patient"} />
+                    <Route component={DoctorSignup} path={"/signup/doctor"} />
+                    <Route component={PatientSignup} path={"/signup/patient"} />
+                    <Route component={Complaints} path={"/complaints"} />
+                    <Route component={Faqs} path={"/faqs"} />
+                    <Route component={PatientDash} path={"/dashboard/patient"} />
+                    <Route component={DoctorDash} path={"/dashboard/doctor"} />
+                    <Route component={PatientNotes} path={"/notes"} />
+                    <Route component={Chat} path={"/chats"} />
+                    <Route component={Payment} exact path={"/payments"} />
+                    <Route component={NotFound} exact path="*" />
+                </Switch>
+                {/* <Footer /> */}
+            </div>
+        </Router>
+    );
 }
 
 export default App;
