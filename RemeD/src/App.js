@@ -15,6 +15,7 @@ import DoctorDash from "./pages/Dashboard/Doctor";
 import PatientNotes from "./pages/PatientNotes";
 import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
+import Faqs from "./pages/Faqs";
 
 
 // import Dashboard from './pages/Dashboard';
@@ -34,6 +35,7 @@ function App() {
           <Route component={DoctorSignup} path={"/signup/doctor"} />
           <Route component={PatientSignup} path={"/signup/patient"} />
           <Route component={Complaints} path={"/complaints"} />
+          <Route component={Faqs} path={"/faqs"} />
           <Route component={PatientDash} path={"/dashboard/patient"} />
           <Route component={DoctorDash} path={"/dashboard/doctor"} />
           <Route component={PatientNotes} path={"/notes"} />

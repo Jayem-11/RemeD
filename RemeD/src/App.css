@@ -16,11 +16,10 @@
 }
 
 .complaints-page {
-    background-color: rgb(238, 238, 238);
+    background-color: azure;
     margin: auto;
     width: 100%;
     text-align: center;
-    padding-top: 20px;
     min-height: 100vh;
     
     
@@ -28,7 +27,7 @@
 
 .area-box{
     
-    margin-top: 80px;
+    margin-top: 40px;
     height: 300px;
     width: 700px; 
     margin-bottom: 60px;
@@ -42,7 +41,6 @@
     color: #fff;
     border: none;
     padding: 10px 20px;
-    margin: 50px;
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
@@ -65,6 +63,8 @@
     margin: auto;
   }
 
+
+  
 #footer {
     margin-left: 5px;
     text-align: center;
@@ -91,6 +91,13 @@
                 padding-left: 0;
                 margin-left: 0;
             }
+  
+.faq-box{
+  min-height: 100vh;
+  margin: auto;
+  text-align: center;
+  background-color: azure;
+}
 
 
     

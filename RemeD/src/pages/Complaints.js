@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import Header from '../components/Sections/Header'
 
 
 const Complaints = () => {
@@ -19,9 +20,10 @@ const Complaints = () => {
 
     return (
         <div className='complaints-page'>
+        <Header />
             <h1 style={{ fontWeight : "bold" , fontSize: "30px"}}>Complaints Page</h1>
             <form onSubmit={() => { onSubmit() }}>
-                <textarea className='area-box'
+                <textarea role='toolbox' className='area-box'
                     value={complain} onChange={(e) =>
                         setComplain(e.target.value)}
                     placeholder='Enter complaints'>

@@ -389,15 +389,14 @@ export default function Doctorsignup() {
                   )}
                 </Stack>
 
-                <HStack spacing={4}>
+                <HStack spacing={28}>
                   {currentStep === 2 ? (
                     <Button
                       // {currentStep === 2 ? onClick={()  => setCurrentStep(1)} : null}
                       onClick={() => currentStep === 2 && setCurrentStep(1)}
                       w={"150px"}
                       h={"40px"}
-                      mt={"17px"}
-                      ml={"135px"}
+                      mt={"1px"}
                       type="submit"
                       bg={"black"}
                       color={"white"}
@@ -411,8 +410,7 @@ export default function Doctorsignup() {
                   <Button
                     w={"150px"}
                     h={"40px"}
-                    mt={"17px"}
-                    ml={"135px"}
+                    mt={"27px"}
                     type={currentStep === 2 ? "submit" : "button"}
                     bg={"black"}
                     color={"white"}
