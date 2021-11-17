@@ -6,7 +6,7 @@ import DiseaseCard from "../components/Cards/DiseaseCard";
 import { SpecialityData } from '../data/speciality'
 import { DiseasesData } from "../data/diseases";
 import LandingDes from "../components/Sections/LandingDes";
-
+// import Footer from "../components/Sections/Footer";
 
 
 export default function Landing() {
@@ -44,6 +44,7 @@ export default function Landing() {
                 </SimpleGrid>
             </Box>
         <LandingDes />
+        {/* <Footer /> */}
         </div>
     );
 }

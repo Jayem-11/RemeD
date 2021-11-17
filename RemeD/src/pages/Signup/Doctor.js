@@ -156,7 +156,7 @@ export default function Doctorsignup() {
           spacing={{ base: 10, lg: 32 }}
           mt={"20px"}
 
-          // py={{ base: 10, sm: 20, lg: 32 }}
+        // py={{ base: 10, sm: 20, lg: 32 }}
         >
           <Stack spacing={{ base: 10, md: 20 }}>
             <Heading

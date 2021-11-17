@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-// import Footer from "./components/Sections/Footer";
+import Footer from "./components/Sections/Footer";
 import Login from "./pages/Signup/Login";
 import Signup from "./pages/Signup/Signup";
 import Complaints from "./pages/Complaints";
@@ -42,7 +42,7 @@ function App() {
           <Route component={Chat} path={"/chat"} />
           <Route component={NotFound} exact path="*" />
         </Switch>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </Router>
   );
