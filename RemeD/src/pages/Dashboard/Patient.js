@@ -2,7 +2,7 @@ import {InputGroup, InputLeftElement, Input, Box,SimpleGrid} from "@chakra-ui/re
 import {AiOutlineSearch} from 'react-icons/ai'
 import Card from "../../components/Cards/Doctor";
 import Header from "../../components/Sections/Header";
-import Footer from "../../components/Sections/Footer";
+// import Footer from "../../components/Sections/Footer";
 import thirdman from '../../assets/thirdman.jpg';
 import tima from '../../assets/tima.jpg';
 import laura from '../../assets/laura.jpg';
@@ -76,7 +76,7 @@ const Patient = () => {
             ) )} 
             </SimpleGrid>
         </Box>
-        <Footer/>
+        {/* <Footer/> */}
         </>
     )
 }

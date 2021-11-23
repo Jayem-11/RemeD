@@ -1,8 +1,10 @@
 import User from '../models/user.js'
-import { OAuth2Client } from 'google-auth-library'
+import pkg from 'google-auth-library'
 import { nanoid } from 'nanoid'
 import config from '../config/config.js'
 import generateToken from '../utils/generateToken.js'
+
+const {OAuth2Client} = pkg
 
 const client = new OAuth2Client(config)
 

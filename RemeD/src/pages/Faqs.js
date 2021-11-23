@@ -14,12 +14,12 @@ import { useHistory } from "react-router-dom";
 
 const Faqs = () => {
 
-     const history = useHistory();
-            const handleClick = () => history.push('/complaints')
+    const history = useHistory();
+    const handleClick = () => history.push('/complaints')
 
 
     return (
-        
+
         <div className="faq-box">
             <Header />
             <Heading pt={'5px'} pb={'100px'}> FAQS  </Heading>
@@ -35,7 +35,7 @@ const Faqs = () => {
                     </h2>
                     <AccordionPanel pb={4}>
                         RemeD is an online platform that offers consultancy services to patients with long term diseases.
-                       At RemeD we've always had one focus in mind: To provide quality healthcare services that are not only good for you but deliver real results to help you reach your goals!
+                        At RemeD we've always had one focus in mind: To provide quality healthcare services that are not only good for you but deliver real results to help you reach your goals!
                     </AccordionPanel>
                 </AccordionItem>
 
@@ -62,7 +62,7 @@ const Faqs = () => {
                         </AccordionButton>
                     </h2>
                     <AccordionPanel pb={4}>
-                       Paypal is the form of payment we use 
+                        Paypal is the form of payment we use
                     </AccordionPanel>
                 </AccordionItem>
 
@@ -82,8 +82,8 @@ const Faqs = () => {
 
 
             </Accordion>
-            <input type="submit" value="Make a Complain" className='btn btn-block' style={{ marginTop:'60px'}}
-            onClick={handleClick}
+            <input type="submit" value="Make a Complain" className='btn btn-block' style={{ marginTop: '60px' }}
+                onClick={handleClick}
             />
 
         </div>
