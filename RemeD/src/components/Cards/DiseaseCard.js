@@ -11,6 +11,7 @@ import {
     Badge,
 } from "@chakra-ui/react";
 
+
 const DiseaseCard = ({details}) => {
     return (
         <Box
@@ -24,9 +25,11 @@ const DiseaseCard = ({details}) => {
             flexDirection="column"
         >
             <Image
-                src={"https://health.wyo.gov/wp-content/uploads/2017/05/man-coughing-on-hand.jpg"}
+                src={details.imageURL}
                 alt=""
                 roundedTop="lg"
+                objectFit='cover'
+                //boxSize='100px'
             />
 
             <Heading fontSize="14" my="4">
