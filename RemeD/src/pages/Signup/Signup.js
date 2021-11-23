@@ -46,7 +46,7 @@ const history = useHistory();
                h={'40px'}
                mb={'17px'}
                     type='submit'
-                  bg={'blue.400'}
+                  bg={'blue.700'}
                   color={'white'}
                   _hover={{
                     bg: 'blue.600',
@@ -58,7 +58,7 @@ const history = useHistory();
                     w={'300px'}
                     h={'40px'}
                     type='submit'
-                  bg={'blue.400'}
+                  bg={'blue.700'}
                   color={'white'}
                   _hover={{
                     bg: 'blue.600',

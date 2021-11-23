@@ -10,17 +10,16 @@
 }
 
 .landBox{
-  background-image: linear-gradient(rgba(76, 125, 216, 0.747), rgba(8, 223, 252, 0.918)), 
+  background-image: linear-gradient(rgba(76, 125, 216, 0.747), rgba(8,223,252,0.918)), 
   url('https://www.shutterstock.com/image-photo/blurred-medical-background-modern-hospital-hall-1495426337') ;
 
 }
 
 .complaints-page {
-    background-color: rgb(238, 238, 238);
+    background-color: azure;
     margin: auto;
     width: 100%;
     text-align: center;
-    padding-top: 20px;
     min-height: 100vh;
     
     
@@ -28,7 +27,7 @@
 
 .area-box{
     
-    margin-top: 80px;
+    margin-top: 40px;
     height: 300px;
     width: 700px; 
     margin-bottom: 60px;
@@ -42,7 +41,6 @@
     color: #fff;
     border: none;
     padding: 10px 20px;
-    margin: 50px;
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
@@ -65,17 +63,22 @@
     margin: auto;
   }
 
+
+  
 #footer {
+    height: 15vh;
     margin-left: 5px;
     text-align: center;
     padding: 1em 0 1em 0;
     box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05), inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.025);
     font-size: 0.8em;
+
 }
 
     #footer .copyright {
         cursor: default;
         margin: 0;
+        padding-top: 25px;
     }
 
         #footer .copyright li {
@@ -91,6 +94,13 @@
                 padding-left: 0;
                 margin-left: 0;
             }
+  
+.faq-box{
+  min-height: 100vh;
+  margin: auto;
+  text-align: center;
+  background-color: azure;
+}
 
 
     

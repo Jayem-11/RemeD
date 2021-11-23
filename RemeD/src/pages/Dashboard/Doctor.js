@@ -8,7 +8,7 @@ import {
 import { AiOutlineSearch } from "react-icons/ai";
 import Card from "../../components/Cards/Patient";
 import Header from "../../components/Sections/Header";
-import Footer from "../../components/Sections/Footer";
+// import Footer from "../../components/Sections/Footer";
 import thirdman from '../../assets/thirdman.jpg';
 import berke from '../../assets/berke.jpg';
 import shvets from '../../assets/shvets.jpg';
@@ -89,7 +89,7 @@ const Doctor = () => {
                 </SimpleGrid>
 
             </Box>
-            <Footer />
+            {/* <Footer /> */}
         </>
     )
 }

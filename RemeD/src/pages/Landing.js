@@ -5,12 +5,14 @@ import { SimpleGrid, Box, Heading } from "@chakra-ui/react";
 import DiseaseCard from "../components/Cards/DiseaseCard";
 import { SpecialityData } from '../data/speciality'
 import { DiseasesData } from "../data/diseases";
-
+import LandingDes from "../components/Sections/LandingDes";
+// import Footer from "../components/Sections/Footer";
 
 
 export default function Landing() {
 
     return (
+        <div>
         <div className="landBox">
             <Header />
             <Hero
@@ -19,7 +21,9 @@ export default function Landing() {
                 ctaText="Create your Account now"
                 ctaLink="/signup"
             />
-            <Box bg="white" p="8" m="auto">
+            
+        </div>
+        <Box bg="azure" p="8" m="auto">
                 <Box textAlign="center" mb="7">
                     <Heading>Speciality</Heading>
                 </Box>
@@ -29,7 +33,7 @@ export default function Landing() {
                     ))}
                 </SimpleGrid>
             </Box>
-            <Box bg="white" p="8" m="auto">
+            <Box bg="azure" p="8" m="auto">
                 <Box textAlign="center" mb="7">
                     <Heading>Chronic Diseases</Heading>
                 </Box>
@@ -39,6 +43,8 @@ export default function Landing() {
                     ))}
                 </SimpleGrid>
             </Box>
+        <LandingDes />
+        {/* <Footer /> */}
         </div>
     );
 }
