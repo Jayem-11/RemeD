@@ -15,7 +15,7 @@ import DoctorDash from "./pages/Dashboard/Doctor";
 import PatientNotes from "./pages/PatientNotes";
 import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
-
+import PrivateRoute from "./utils/ProtectedRoutes/PrivateRoute";
 
 // import Dashboard from './pages/Dashboard';
 
@@ -28,15 +28,15 @@ function App() {
                     <Route component={Landing} exact path={"/"} />
                     <Route component={Login} path={"/login"} />
                     <Route component={Signup} exact path={"/signup"} />
-                    <Route component={Doctor} path={"/profile/doctor"} />
-                    <Route component={Patient} path={"/profile/patient"} />
+                    <PrivateRoute Comp={Doctor} path={"/profile/doctor"} />
+                    <PrivateRoute Comp={Patient} path={"/profile/patient"} />
                     <Route component={DoctorSignup} path={"/signup/doctor"} />
                     <Route component={PatientSignup} path={"/signup/patient"} />
-                    <Route component={Complaints} path={"/complaints"} />
-                    <Route component={PatientDash} path={"/dashboard/patient"} />
-                    <Route component={DoctorDash} path={"/dashboard/doctor"} />
-                    <Route component={PatientNotes} path={"/notes"} />
-                    <Route component={Chat} path={"/chat"} />
+                    <PrivateRoute Comp={Complaints} path={"/complaints"} />
+                    <PrivateRoute Comp={PatientDash} path={"/dashboard/patient"} />
+                    <PrivateRoute Comp={DoctorDash} path={"/dashboard/doctor"} />
+                    <PrivateRoute Comp={PatientNotes} path={"/notes"} />
+                    <PrivateRoute Comp={Chat} path={"/chats"} />
                     <Route component={NotFound} exact path="*" />
                 </Switch>
                 {/* <Footer /> */}
