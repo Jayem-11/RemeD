@@ -1,4 +1,7 @@
 const auth = {
+    // name
+    // id
+    // isDoctor
     isAuthenticated() {
         if (typeof window === undefined) {
             return false

@@ -65,5 +65,33 @@ export const doctorSignupSchema = Yup.object().shape({
         .string()
         .required('Address is a required field'),
 })
+export const patientSignupSchema = Yup.object().shape({
+    email: Yup
+        .string()
+        .email()
+        .required('Email is a required field'),
+    password: Yup
+        .string()
+        .required("Please enter your password")
+        .matches(
+            /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
+            "Password must contain at least 8 characters, one uppercase, one number and one special case character"
+        ),
+    firstname: Yup
+        .string()
+        .required('Firstname is a required field'),
+    lastname: Yup
+        .string()
+        .required('Lastname is a required field'),
+    phoneno: Yup
+        .string()
+        .required('Phoneno is a required field'),
+    gender: Yup
+        .string()
+        .required('Gender is a required field'),
+    bloodType: Yup
+        .string()
+        .required('Institution is a required field'),
+})
 
 export default validations;
