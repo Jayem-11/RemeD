@@ -54,7 +54,27 @@ const Card = ({details}) => {
             <BsStarFill color="gray.500" />
           </HStack>
 
-          <Flex mt={3} alignItems="center" justifyContent="end">
+          <Flex mt={3} alignItems="center" justifyContent="space-between">
+
+          <Button
+              px={2}
+              py={1}
+              bg="white"
+              fontSize="xs"
+              color="gray.900"
+              fontWeight="bold"
+              rounded="lg"
+              textTransform="uppercase"
+              _hover={{
+                bg: "gray.200",
+              }}
+              _focus={{
+                bg: "gray.400",
+              }}
+              onClick={ () => history.push('/dashboard/payment')}
+            >
+              Consult
+            </Button>
             
             <Button
               px={2}
