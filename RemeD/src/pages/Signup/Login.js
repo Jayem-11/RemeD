@@ -17,6 +17,7 @@ import auth from "../../services/auth";
 import { signin } from "../../services/user";
 import { useFormik } from "formik"
 import { loginSchema } from '../../utils/validation'
+import { useHistory } from "react-router-dom";
 
 
 
@@ -34,10 +35,11 @@ export default function Login() {
     })
     const [msg, setMsg] = useState("");
     const toast = useToast();
+    const history = useHistory()
 
     const signinErr = () => {
         toast({
-            title: 'An error was encountered. Please try again',
+            title: msg,
             status: 'error',
             duration: 5000,
             isClosable: true,
@@ -57,23 +59,25 @@ export default function Login() {
             password: formik.values.password,
         };
 
-        signin(user).then((data) => {
-            if (data.message) {
-                setMsg(data.message);
-            } else {
+        signin(user).then(data => {
+            if (data && (data.error)){
+                console.log(data.error)
+                setMsg(data.error)
+            }else {
                 auth.authenticate(data, () => {
-                    formik.resetForm();
-                });
+                    console.log(data)
+                    formik.resetForm()
+                    history.push(data.isDoctor ? '/dashboard/doctor' : '/dashboard/patient')
+                })
             }
-        });
-    };
+        })
+    }
 
     useEffect(() => {
         if (msg) {
             signinErr();
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [msg]);
+    }, [msg, signinErr]);
 
 
 

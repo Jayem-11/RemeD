@@ -3,12 +3,8 @@ import {
     Heading,
     Text,
     Button,
-    chakra,
-    useColorModeValue,
-    Flex,
-    Link,
     Image,
-    Badge,
+    
 } from "@chakra-ui/react";
 
 
@@ -19,7 +15,7 @@ const DiseaseCard = ({details}) => {
             w="280px"
             h="300px"
             boxShadow="lg"
-            bgColor="#fefae0"
+            bgColor="#e8e8e4"
             d="flex"
             alignItems="center"
             flexDirection="column"
@@ -29,7 +25,9 @@ const DiseaseCard = ({details}) => {
                 alt=""
                 roundedTop="lg"
                 objectFit='cover'
-                //boxSize='100px'
+                h={'62%'}
+                w={'100%'}
+                //boxSize='250px'
             />
 
             <Heading fontSize="14" my="4">

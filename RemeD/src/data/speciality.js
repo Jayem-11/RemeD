@@ -1,5 +1,5 @@
 import Gaestroenterology from '../assets/Gaestroenterology.jpg';
-import neph2 from '../assets/Neph2.jpg'
+import Neph2 from '../assets/Neph2.jpg'
 import obstetrics from '../assets/obstetrics.jpg' ;
 import psychiatry from '../assets/psychiatry.jpg';
 
@@ -8,7 +8,7 @@ export const SpecialityData = [
     {
         speciality:'Nephrology',
         amount:700,
-        imageURL:neph2,
+        imageURL:Neph2,
     },
     {
         speciality:'Obstetrics and Gynaecology',
@@ -34,9 +34,6 @@ export const SpecialityData = [
         speciality:'General Practioner',
         amount:700,
     },
-    {
-        speciality:'General Practioner',
-        amount:700,
-    },
+    
     
 ]

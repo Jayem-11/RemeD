@@ -40,6 +40,7 @@ const Test = () => {
                         src={property.imageUrl}
                         alt={property.imageAlt}
                         roundedTop="lg"
+                        
                     />
                 
                 <Heading fontSize="14" my="4">

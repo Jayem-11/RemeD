@@ -5,18 +5,28 @@ const baseUrl = 'http://localhost:3007/api/users'
 // method to perform authentication with email and password
 
 const signin = async (user) => {
-    try {
-        const config = {
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json"
-            }
+    const config = {
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
         }
-        let resp = await axios.post(`${baseUrl}/signin`, user, config)
-        return await resp.data;
-    } catch (err) {
-        console.log(err)
     }
+    let resp = await axios.post(`${baseUrl}/signin`, user, config)
+    console.log(resp)
+    return resp.data;
+    // try {
+    //     const config = {
+    //         headers: {
+    //             "Accept": "application/json",
+    //             "Content-Type": "application/json"
+    //         }
+    //     }
+    //     let resp = await axios.post(`${baseUrl}/signin`, user, config)
+    //     console.log(resp)
+    //     return resp.data;
+    // } catch (err) {
+    //     console.log(err)
+    // }
 }
 
 

@@ -74,8 +74,8 @@ const PatientSignup = () => {
         };
 
         signup(userData).then((data) => {
-            if (data.message) {
-                setMsg(data.message);
+            if (data && (data.error)) {
+                setMsg(data.error);
             } else {
                 auth.authenticate(data, () => {
                     formik.resetForm();
@@ -94,7 +94,8 @@ const PatientSignup = () => {
             bgImg="https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
             bgRepeat="no-repeat"
             shadow="lg"
-            borderRadius="25% 0px 0px"
+            borderRadius="25% 0px 0px "
+                        
         >
             <Heading
                 pt={"30px"}
@@ -138,7 +139,7 @@ const PatientSignup = () => {
                     boxShadow="dark-lg"
                     bgColor="azure"
                     alignItems="flex-end"
-                    height="95vh"
+                    height="98vh"
                 >
                     <Box my={4} textAlign="left">
                         <Tabs index={tabIndex} isManual onChange={handleTabChange} isFitted variant="enclosed">
@@ -207,6 +208,7 @@ const PatientSignup = () => {
                                             mt={4}
                                             type="submit"
                                             onClick={() => setTabIndex(1)}
+                                            size='sm'
                                         >
                                             Next
                                         </Button>
