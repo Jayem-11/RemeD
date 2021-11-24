@@ -29,9 +29,12 @@ const signin = async (req, res) => {
             token: generateToken(user._id)
         })
     } else {
-        return res.status(400).json({
-            message: "Invalid username or password"
+        console.log('err')
+        return res.json({
+            error: "Invalid username or password"
         })
+        // res.status(400)
+        // return new Error('An error');
     }
 }
 

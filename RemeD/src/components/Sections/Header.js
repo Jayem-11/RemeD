@@ -15,6 +15,7 @@ import {
 } from "@chakra-ui/react";
 import Logo from "../../assets/Logo";
 import { useHistory } from "react-router-dom";
+import auth from "../../services/auth";
 
 const CloseIcon = () => (
   <svg width="24" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
@@ -94,8 +95,8 @@ const Header = (props) => {
         >
           <MenuItems to="/dashboard/doctor">Dashboard</MenuItems>
           <MenuItems to="/chats">Chats </MenuItems>
-          <MenuItems to="/login" isLast>
-            <Button size="sm" rounded="md" colorScheme="primary">
+          <MenuItems isLast>
+            <Button onClick={() => { auth.signout(); history.push('/'); }} size="sm" rounded="md" colorScheme="primary">
               Logout
             </Button>
           </MenuItems>
