@@ -13,6 +13,13 @@ import {
     useBreakpointValue,
     HStack,
     useToast,
+    Tabs,
+    Tab,
+    TabList,
+    TabPanels,
+    TabPanel,
+    FormControl,
+    FormLabel,
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
@@ -20,6 +27,7 @@ import auth from "../../services/auth";
 import { signup } from "../../services/user";
 import { useFormik } from "formik";
 import { doctorSignupSchema } from "../../utils/validation";
+import { registerSendBirdUser } from "../../services/user";
 
 const avatars = [
     {
@@ -57,7 +65,8 @@ const initialState = {
 };
 
 export default function DoctorSignup() {
-    const [currentStep, setCurrentStep] = useState(1);
+    const [tabIndex, setTabIndex] = useState(0)
+    const [userInfo, setUserInfo] = useState({});
     const [msg, setMsg] = useState(null);
     const toast = useToast();
     const history = useHistory();
@@ -100,17 +109,29 @@ export default function DoctorSignup() {
             },
         };
 
+        const sendbirdUser = {
+            user_id: userInfo._id,
+            nickname: userInfo.firstname,
+            metadata:{
+                isDoctor: true,
+            }
+        }
+
         signup(userData).then((data) => {
             if (data.message) {
                 setMsg(data.message);
             } else {
                 auth.authenticate(data, () => {
+                    setUserInfo(data);
                     formik.resetForm();
+                    registerSendBirdUser(sendbirdUser).then((info) => console.log(info));
                     history.push("/dashboard/doctor");
                 });
             }
         });
     };
+
+    const handleTabChange = index => setTabIndex(index);
 
     return (
         <div>
@@ -229,17 +250,17 @@ export default function DoctorSignup() {
                                 We’re looking for amazing doctors just like you. Become a part
                                 of our medical team.
                             </Text>
-                            {currentStep === 2 && (
-                                <Text color={"black"} fontSize={20}>
-                                    Additional Details
-                                </Text>
-                            )}
                         </Stack>
                         <Box top={"5px"}>
-                            <form onSubmit={formik.handleSubmit}>
-                                <Stack spacing={4}>
-                                    {currentStep === 1 && (
-                                        <>
+                            <Tabs index={tabIndex} isManual onChange={handleTabChange}>
+                                <TabList>
+                                    <Tab>Basic Details</Tab>
+                                    <Tab>Additional Details</Tab>
+                                </TabList>
+                                <TabPanels>
+                                    <TabPanel>
+                                        <FormControl isRequired>
+                                            <FormLabel>Firstname</FormLabel>
                                             <Input
                                                 placeholder="Firstname"
                                                 bg={"gray.100"}
@@ -255,6 +276,9 @@ export default function DoctorSignup() {
                                                     {formik.errors.firstname}
                                                 </Text>
                                             )}
+                                        </FormControl>
+                                        <FormControl isRequired>
+                                            <FormLabel>Lastname</FormLabel>
                                             <Input
                                                 placeholder="Lastname"
                                                 bg={"gray.100"}
@@ -270,7 +294,9 @@ export default function DoctorSignup() {
                                                     {formik.errors.lastname}
                                                 </Text>
                                             )}
-
+                                        </FormControl>
+                                        <FormControl isRequired>
+                                            <FormLabel>Email</FormLabel>
                                             <Input
                                                 placeholder="Email address"
                                                 bg={"gray.100"}
@@ -286,10 +312,13 @@ export default function DoctorSignup() {
                                                     {formik.errors.email}
                                                 </Text>
                                             )}
-
+                                        </FormControl>
+                                        <FormControl isRequired>
+                                            <FormLabel>Password</FormLabel>
                                             <Input
                                                 placeholder="Password"
                                                 {...formik.getFieldProps("password")}
+                                                type='password'
                                                 bg={"gray.100"}
                                                 border={0}
                                                 color={"gray.500"}
@@ -302,10 +331,11 @@ export default function DoctorSignup() {
                                                     {formik.errors.password}
                                                 </Text>
                                             )}
-                                        </>
-                                    )}
-                                    {currentStep === 2 && (
-                                        <>
+                                        </FormControl>
+                                    </TabPanel>
+                                    <TabPanel>
+                                        <FormControl isRequired>
+                                            <FormLabel>Institution</FormLabel>
                                             <Input
                                                 placeholder="Institution of Work"
                                                 {...formik.getFieldProps("institution")}
@@ -321,10 +351,12 @@ export default function DoctorSignup() {
                                                     {formik.errors.institution}
                                                 </Text>
                                             )}
-
+                                        </FormControl>
+                                        <FormControl isRequired>
+                                            <FormLabel>Speciality</FormLabel>
                                             <Input
                                                 {...formik.getFieldProps("speciality")}
-                                                placeholder="Specialization"
+                                                placeholder="Add Speciality"
                                                 bg={"gray.100"}
                                                 border={0}
                                                 color={"gray.500"}
@@ -337,9 +369,11 @@ export default function DoctorSignup() {
                                                     {formik.errors.speciality}
                                                 </Text>
                                             )}
-
+                                        </FormControl>
+                                        <FormControl isRequired>
+                                            <FormLabel>Address</FormLabel>
                                             <Input
-                                                placeholder="Address"
+                                                placeholder="Add address"
                                                 {...formik.getFieldProps("address")}
                                                 bg={"gray.100"}
                                                 border={0}
@@ -353,9 +387,11 @@ export default function DoctorSignup() {
                                                     {formik.errors.address}
                                                 </Text>
                                             )}
-
+                                        </FormControl>
+                                        <FormControl isRequired>
+                                            <FormLabel>Phone No</FormLabel>
                                             <Input
-                                                placeholder="Phone Number"
+                                                placeholder="Add mobile phone no"
                                                 {...formik.getFieldProps("phoneno")}
                                                 bg={"gray.100"}
                                                 border={0}
@@ -369,9 +405,11 @@ export default function DoctorSignup() {
                                                     {formik.errors.phoneno}
                                                 </Text>
                                             )}
-
+                                        </FormControl>
+                                        <FormControl isRequired>
+                                            <FormLabel>License</FormLabel>
                                             <Input
-                                                placeholder="License No"
+                                                placeholder="Your License No"
                                                 {...formik.getFieldProps("license")}
                                                 bg={"gray.100"}
                                                 border={0}
@@ -385,50 +423,26 @@ export default function DoctorSignup() {
                                                     {formik.errors.license}
                                                 </Text>
                                             )}
-                                        </>
-                                    )}
-                                </Stack>
-
-                                <HStack spacing={4}>
-                                    {currentStep === 2 ? (
+                                        </FormControl>
                                         <Button
-                                            // {currentStep === 2 ? onClick={()  => setCurrentStep(1)} : null}
-                                            onClick={() => currentStep === 2 && setCurrentStep(1)}
                                             w={"150px"}
                                             h={"40px"}
                                             mt={"17px"}
                                             ml={"135px"}
-                                            type="submit"
+                                            type={'submit'}
                                             bg={"black"}
                                             color={"white"}
                                             _hover={{
                                                 bg: "gray.900",
                                             }}
+                                            onClick={() => formik.handleSubmit()}
                                         >
-                                            Prev
+                                            Submit
                                         </Button>
-                                    ) : null}
-                                    <Button
-                                        w={"150px"}
-                                        h={"40px"}
-                                        mt={"17px"}
-                                        ml={"135px"}
-                                        type={currentStep === 2 ? "submit" : "button"}
-                                        bg={"black"}
-                                        color={"white"}
-                                        _hover={{
-                                            bg: "gray.900",
-                                        }}
-                                        onClick={() =>
-                                            currentStep === 2
-                                                ? formik.handleSubmit
-                                                : setCurrentStep(2)
-                                        }
-                                    >
-                                        {currentStep === 2 ? "Submit" : "Next"}
-                                    </Button>
-                                </HStack>
-                            </form>
+                                    </TabPanel>
+                                </TabPanels>
+                            </Tabs>
+                            
                         </Box>
                         form
                     </Stack>

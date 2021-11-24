@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { SEND_APP_ID, SENDBIRD_TOKEN } from '../utils/sendbird_const'
 
 const baseUrl = 'http://localhost:3007/api/users'
 
@@ -76,4 +77,22 @@ const authenticateGoogle = async (user) => {
     }
 }
 
-export { signup, profile, authenticateGoogle, signin };
+const registerSendBirdUser = async user => {
+    try {
+        const config = {
+            headers: {
+                "Api-Token": `${SENDBIRD_TOKEN}`,
+                "Content-Type": "application/json"
+            }
+        }
+
+        let resp = await axios.post(`https://api-${SEND_APP_ID}.sendbird.com/v3/users`, user, config);
+        return await resp.data;
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+
+
+export { signup, profile, authenticateGoogle, signin, registerSendBirdUser };
