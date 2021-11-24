@@ -45,7 +45,7 @@ import {RiTeamFill } from 'react-icons/ri';
   
   export default function LandingDes() {
     return (
-      <Container maxW={'7xl'} minH={'200vh'}  >
+      <Container maxW={'7xl'} minH={'200vh'} bg={'#f1faee'}  >
         <SimpleGrid  columns={{ base: 1, md: 2 }} spacing={10} pt={'100px'} >
           <Stack spacing={4}>
             <Text

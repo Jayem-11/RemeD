@@ -22,7 +22,7 @@ const auth = {
         if (typeof window !== undefined) {
             sessionStorage.removeItem('userInfo');
         }
-        cb()
+        // cb()
     },
 }
 
