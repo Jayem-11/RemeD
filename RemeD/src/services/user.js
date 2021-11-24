@@ -6,28 +6,18 @@ const baseUrl = 'http://localhost:3007/api/users'
 // method to perform authentication with email and password
 
 const signin = async (user) => {
-    const config = {
-        headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json"
+    try {
+        const config = {
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            }
         }
+        let resp = await axios.post(`${baseUrl}/signin`, user, config)
+        return await resp.data;
+    } catch (err) {
+        console.log(err)
     }
-    let resp = await axios.post(`${baseUrl}/signin`, user, config)
-    console.log(resp)
-    return resp.data;
-    // try {
-    //     const config = {
-    //         headers: {
-    //             "Accept": "application/json",
-    //             "Content-Type": "application/json"
-    //         }
-    //     }
-    //     let resp = await axios.post(`${baseUrl}/signin`, user, config)
-    //     console.log(resp)
-    //     return resp.data;
-    // } catch (err) {
-    //     console.log(err)
-    // }
 }
 
 
@@ -93,6 +83,19 @@ const registerSendBirdUser = async user => {
     }
 }
 
+const fetchSendbirdUsers = async () => {
+    try{
+        const config = {
+            headers: {
+                "Api-Token": `${SENDBIRD_TOKEN}`,
+                "Content-Type": "application/json"
+            }
+        }
+        let resp = await axios.get(`https://api-${SEND_APP_ID}.sendbird.com/v3/users`, config);
+        return await resp.data;
+    } catch (err) {
+        console.log(err)
+    }
+}
 
-
-export { signup, profile, authenticateGoogle, signin, registerSendBirdUser };
+export { signup, profile, authenticateGoogle, signin, registerSendBirdUser, fetchSendbirdUsers };
