@@ -15,7 +15,7 @@ const DiseaseCard = ({details}) => {
             w="280px"
             h="300px"
             boxShadow="lg"
-            bgColor="#e8e8e4"
+            bgColor="#f1faee"
             d="flex"
             alignItems="center"
             flexDirection="column"
