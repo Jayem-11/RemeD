@@ -21,6 +21,7 @@ import auth from "../../services/auth";
 import { signup } from "../../services/user";
 import { useFormik } from "formik";
 import { patientSignupSchema } from "../../utils/validation";
+import { registerSendBirdUser } from "../../services/user";
 
 const initialState = {
     firstname: "",
@@ -36,6 +37,7 @@ const PatientSignup = () => {
     const history = useHistory();
     const [msg, setMsg] = useState(null);
     const [tabIndex, setTabIndex] = useState(0);
+    const [userInfo, setUserInfo] = useState({});
     const toast = useToast();
     const formik = useFormik({
         initialValues: initialState,
@@ -57,6 +59,7 @@ const PatientSignup = () => {
         if (msg !== null) {
             signupErr();
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [msg]);
 
     const clickSubmit = () => {
@@ -73,13 +76,23 @@ const PatientSignup = () => {
             },
         };
 
+        const sendbirdUser = {
+            user_id: userInfo._id,
+            nickname: userInfo.firstname,
+            metadata:{
+                isDoctor: false,
+            }
+        }
+
         signup(userData).then((data) => {
             if (data && (data.error)) {
                 setMsg(data.error);
             } else {
                 console.log("patient signup response" , data)
                 auth.authenticate(data, () => {
+                    setUserInfo(data)
                     formik.resetForm();
+                    registerSendBirdUser(sendbirdUser).then((info) => console.log(info));
                     history.push("/dashboard/patient");
                 });
             }
