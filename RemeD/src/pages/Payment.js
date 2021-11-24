@@ -38,10 +38,9 @@ const Payment = () => {
   return (
     <>
       <NavBar />
-      <Box m="auto" p={8} bg="#f8f9fa" minH={"185vh"}>
-        <Heading fontSize={"30px"}> RemeD </Heading>
+      <Box m="auto" p={8} bg="#f8f9fa" minH={"175vh"}>
         <SimpleGrid spacing="100px" height="500px" m="auto" p={8}>
-          <Box margin={"auto"} pt={"90px"} height="450px" w="400px">
+          <Box margin={"auto"} pt={"30px"} height="450px" w="400px">
             <Text fontSize="50px" color="black" display="flex">
               Make Payment
             </Text>
