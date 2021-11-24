@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react"
 
 import { Heading } from '@chakra-ui/react'
-import Header from "../components/Sections/Header"
+import NavBar from "../components/Sections/Navbar/NavBar";
 import { useHistory } from "react-router-dom";
 
 
@@ -21,7 +21,7 @@ const Faqs = () => {
     return (
 
         <div className="faq-box">
-            <Header />
+            <NavBar />
             <Heading pt={'5px'} pb={'100px'}> FAQS  </Heading>
             <Accordion width={'50%'} margin={'auto'} border={'2px black'} allowToggle>
                 <AccordionItem>

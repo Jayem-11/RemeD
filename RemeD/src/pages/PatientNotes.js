@@ -2,8 +2,8 @@ import { useState } from "react";
 import NoteHeading from "../components/Notes/NoteHeading";
 import Notes from "../components/Notes/Notes";
 import AddTask from "../components/Notes/AddNote";
-import Header from "../components/Sections/Header";
 import { Flex, Box } from "@chakra-ui/react";
+import NavBar from "../components/Sections/Navbar/NavBar";
 
 const PatientNotes = () => {
   const [showAddTask, setShowAddTask] = useState(false);
@@ -50,7 +50,7 @@ const PatientNotes = () => {
   };
   return (
     <>
-      <Header />
+      <NavBar />
       <Flex justifyContent="center">
         <Box
           w={900}

@@ -1,5 +1,5 @@
 import LandingCard from "../components/Cards/LandingCard";
-import Header from "../components/Sections/Header";
+import Header from "../components/Sections/Navbar/Header";
 import Hero from "../components/Sections/Hero";
 import { SimpleGrid, Box, Heading } from "@chakra-ui/react";
 import DiseaseCard from "../components/Cards/DiseaseCard";
@@ -9,7 +9,7 @@ import LandingDes from "../components/Sections/LandingDes";
 // import Footer from "../components/Sections/Footer";
 
 
-export default function Landing() {
+ const Landing =()=> {
 
     return (
         <div>
@@ -48,3 +48,6 @@ export default function Landing() {
         </div>
     );
 }
+
+
+export default Landing

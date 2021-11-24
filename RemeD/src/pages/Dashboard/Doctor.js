@@ -7,7 +7,7 @@ import {
 } from "@chakra-ui/react";
 import { AiOutlineSearch } from "react-icons/ai";
 import Card from "../../components/Cards/Patient";
-import Header from "../../components/Sections/Header";
+import NavBar from "../../components/Sections/Navbar/NavBar";
 // import Footer from "../../components/Sections/Footer";
 import thirdman from '../../assets/thirdman.jpg';
 import berke from '../../assets/berke.jpg';
@@ -78,7 +78,7 @@ const data = [{
 const Doctor = () => {
     return (
         <>
-            <Header />
+            <NavBar />
             <Box pt={'15px'} pl={'10%'} pr={'10%'} minH={'78.7vH'} >
 
                 <SimpleGrid columns={[2, null, 3]} spacing="40px">

@@ -19,7 +19,9 @@ import { useFormik } from "formik"
 import { loginSchema } from '../../utils/validation'
 import { useHistory } from "react-router-dom";
 
-
+// Patient Example login
+// joan@gmail.com
+// Joan*2021
 
 const initialState = {
     email: "",
