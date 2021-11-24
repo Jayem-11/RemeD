@@ -99,44 +99,48 @@ const NavBar = (props) => {
           direction={["column", "row", "row", "row"]}
           pt={[4, 4, 0, 0]}
         >
-          <MenuItems to="/dashboard/doctor">Dashboard</MenuItems>
-          <MenuItems to="/chats">Chats </MenuItems>
+          <MenuItems to={UserInfo["isDoctor"]? '/dashboard/doctor': "/dashboard/patient"}>Dashboard</MenuItems>
+          <MenuItems to="/chat">Chats </MenuItems>
           <MenuItems to="/login" isLast>
             <Button
               size="sm"
               rounded="md"
               colorScheme="primary"
-              onClick={() =>
-                auth.signout(() => console.log("Sign out unsuccessful"))
-              }
+              onClick={() => auth.signout()}
             >
               Log Out
             </Button>
           </MenuItems>
-          {UserInfo["isDoctor"] && (
-            <Menu>
-              <MenuButton
-                as={Button}
-                rounded={"full"}
-                variant={"link"}
-                cursor={"pointer"}
-                minW={0}
-                ml="12px"
-              >
-                <Avatar
-                  size={"sm"}
-                  src={
-                    "https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9"
-                  }
-                />
-              </MenuButton>
+
+          <Menu>
+            <MenuButton
+              as={Button}
+              rounded={"full"}
+              variant={"link"}
+              cursor={"pointer"}
+              minW={0}
+              ml="12px"
+            >
+              <Avatar
+                size={"sm"}
+                src={
+                  "https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9"
+                }
+              />
+            </MenuButton>
+            <MenuList>
+                <MenuItem onClick={() => history.push(UserInfo["isDoctor"]? '/profile/doctor': "/profile/patient")}>
+                👤 Profile
+                </MenuItem>
+              </MenuList>
+            {UserInfo["isDoctor"] && (
               <MenuList>
                 <MenuItem onClick={() => history.push("/notes")}>
                   📝 Notes
                 </MenuItem>
               </MenuList>
-            </Menu>
-          )}
+            )}
+          </Menu>
         </Flex>
       </Box>
     </Flex>
