@@ -4,24 +4,21 @@ import Footer from "./components/Sections/Footer";
 import Login from "./pages/Signup/Login";
 import Signup from "./pages/Signup/Signup";
 import Complaints from "./pages/Complaints";
-// import Header from "./components/Sections/Header";
 import Landing from "./pages/Landing";
 import Doctor from "./pages/Profiles/Doctor";
 import Patient from "./pages/Profiles/Patient";
 import DoctorSignup from "./pages/Signup/Doctor";
-import PatientSignup from "./pages/Signup/Patient"
+import PatientSignup from "./pages/Signup/Patient";
 import PatientDash from "./pages/Dashboard/Patient";
 import DoctorDash from "./pages/Dashboard/Doctor";
 import PatientNotes from "./pages/PatientNotes";
 import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
 import Faqs from "./pages/Faqs";
-import PrivateRoute from "./utils/ProtectedRoutes/PrivateRoute";
+import PrivateRoute from "./utils/PrivateRoute";
 import Payment from "./pages/Payment";
 
-// import Dashboard from './pages/Dashboard';
-
-function App() {
+const App = () => {
   return (
     <Router>
       <div className="App">
@@ -39,14 +36,14 @@ function App() {
           <PrivateRoute Comp={PatientDash} path={"/dashboard/patient"} />
           <PrivateRoute Comp={DoctorDash} path={"/dashboard/doctor"} />
           <PrivateRoute Comp={PatientNotes} path={"/notes"} />
-          <PrivateRoute Comp={Chat} path={"/chats"} />
           <PrivateRoute Comp={Payment} path={"/dashboard/payment"} />
-
+          <PrivateRoute Comp={Chat} path={"/chats"} />
+          <Route component={NotFound} exact path={"*"} />
         </Switch>
         <Footer />
       </div>
     </Router>
   );
-}
+};
 
 export default App;

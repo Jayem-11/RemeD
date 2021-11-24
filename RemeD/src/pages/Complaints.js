@@ -1,38 +1,43 @@
-import React from 'react'
-import { useState } from 'react'
-import Header from '../components/Sections/Header'
-
+import React from "react";
+import { useState } from "react";
+import NavBar from "../components/Sections/Navbar/NavBar";
 
 const Complaints = () => {
-    const [complain, setComplain] = useState('')
+  const [complain, setComplain] = useState("");
 
-    const onSubmit = (e) => {
-        e.preventDefault()
+  const onSubmit = (e) => {
+    e.preventDefault();
 
-        if (!complain) {
-            alert('Please add complaint')
-            return
-        }
-        //do sth
-        setComplain('')
-
+    if (!complain) {
+      alert("Please add complaint");
+      return;
     }
+    //do sth
+    setComplain("");
+  };
 
-    return (
-        <div className='complaints-page'>
-        <Header />
-            <h1 style={{ fontWeight : "bold" , fontSize: "30px"}}>Complaints Page</h1>
-            <form onSubmit={() => { onSubmit() }}>
-                <textarea role='toolbox' className='area-box'
-                    value={complain} onChange={(e) =>
-                        setComplain(e.target.value)}
-                    placeholder='Enter complaints'>
-                </textarea>
+  return (
+    <div className="complaints-page">
+      <NavBar />
 
-                <input type="submit" value="Send Complaint" className='btn btn-block' />
-            </form>
-        </div>
-    )
-}
+      <h1 style={{ fontWeight: "bold", fontSize: "30px" }}>Complaints Page</h1>
+      <form
+        onSubmit={() => {
+          onSubmit();
+        }}
+      >
+        <textarea
+          role="toolbox"
+          className="area-box"
+          value={complain}
+          onChange={(e) => setComplain(e.target.value)}
+          placeholder="Enter complaints"
+        ></textarea>
 
-export default Complaints
+        <input type="submit" value="Send Complaint" className="btn btn-block" />
+      </form>
+    </div>
+  );
+};
+
+export default Complaints;

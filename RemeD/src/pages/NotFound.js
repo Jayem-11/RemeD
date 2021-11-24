@@ -1,7 +1,7 @@
 import NotFoundSVG from "../assets/not_found.svg";
 import { Image } from "@chakra-ui/image";
 import { Flex } from "@chakra-ui/layout";
-import Header from "../components/Sections/Header";
+import Header from "../components/Sections/Navbar/Header";
 
 const NotFound = () => {
   return (

@@ -1,7 +1,7 @@
-import auth from '../../services/auth';
+import auth from '../services/auth';
 import { Redirect, Route, useLocation } from "react-router-dom";
 
-const PatientRoute = ({ Comp, ...rest }) => {
+const PrivateRoute = ({ Comp, ...rest }) => {
     let location = useLocation();
     const { isAuthenticated } = auth
 
@@ -24,4 +24,4 @@ const PatientRoute = ({ Comp, ...rest }) => {
     );
 };
 
-export default PatientRoute;
+export default PrivateRoute;

@@ -59,7 +59,7 @@ const userSchema = new mongoose.Schema({
         },
         bloodType:{
             type: String,
-            enum:['A-' ,'AB-', 'B-', 'O-', 'A+' ,'AB+', 'B+', 'O+'],
+            enum:['A+', 'A-', 'AB+', 'AB-', 'B+', 'B-', 'O+', 'O-']
         },
     },
 },{

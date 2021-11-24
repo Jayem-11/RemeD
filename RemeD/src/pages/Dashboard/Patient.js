@@ -1,7 +1,7 @@
 import {InputGroup, InputLeftElement, Input, Box,SimpleGrid} from "@chakra-ui/react";
 import {AiOutlineSearch} from 'react-icons/ai'
 import Card from "../../components/Cards/Doctor";
-import Header from "../../components/Sections/Header";
+import NavBar from "../../components/Sections/Navbar/NavBar";
 // import Footer from "../../components/Sections/Footer";
 import thirdman from '../../assets/thirdman.jpg';
 import tima from '../../assets/tima.jpg';
@@ -59,7 +59,7 @@ const data = [{
 const Patient = () => {
     return (
         <>
-        <Header/>
+        <NavBar/>
         <Box  pl={'10%'} pr={'10%'} minH={'88.7vH'} >
             <InputGroup w={'25%'} mb={'2%'} display={{ base: "none", lg: "block" }} mr="auto" bg={'white'} border={'black'} >
                 <InputLeftElement

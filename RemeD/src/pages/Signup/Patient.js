@@ -77,6 +77,7 @@ const PatientSignup = () => {
             if (data && (data.error)) {
                 setMsg(data.error);
             } else {
+                console.log("patient signup response" , data)
                 auth.authenticate(data, () => {
                     formik.resetForm();
                     history.push("/dashboard/patient");
