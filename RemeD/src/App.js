@@ -37,7 +37,7 @@ const App = () => {
           <PrivateRoute Comp={DoctorDash} path={"/dashboard/doctor"} />
           <PrivateRoute Comp={PatientNotes} path={"/notes"} />
           <PrivateRoute Comp={Payment} path={"/dashboard/payment"} />
-          <PrivateRoute Comp={Chat} path={"/chats"} />
+          <PrivateRoute Comp={Chat} path={"/chat"} />
           <Route component={NotFound} exact path={"*"} />
         </Switch>
         <Footer />
