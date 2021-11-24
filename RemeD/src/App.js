@@ -17,6 +17,7 @@ import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
 import Faqs from "./pages/Faqs";
 import PrivateRoute from "./utils/ProtectedRoutes/PrivateRoute";
+import Payment from "./pages/Payment";
 
 // import Dashboard from './pages/Dashboard';
 
@@ -39,6 +40,8 @@ function App() {
           <PrivateRoute Comp={DoctorDash} path={"/dashboard/doctor"} />
           <PrivateRoute Comp={PatientNotes} path={"/notes"} />
           <PrivateRoute Comp={Chat} path={"/chats"} />
+          <Route component={Payment} path={"/dashboard/payment"} />
+
         </Switch>
         <Footer />
       </div>

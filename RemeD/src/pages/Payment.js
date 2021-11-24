@@ -1,11 +1,11 @@
-import { Box, SimpleGrid, Text, Image, Spinner } from '@chakra-ui/react'
+import { Box, SimpleGrid, Text, Image, Heading ,Spinner } from '@chakra-ui/react'
 import { PayPalButton } from "react-paypal-button-v2"
 import { useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 
 
-const Payment = () => {
+const Payment = () => { 
     const [sdkReady, setSdkReady] = useState(false)
     useEffect(() => {
         const addPayPalScript = async () => {
@@ -36,29 +36,22 @@ const Payment = () => {
             m='auto'
             p={8}
             bg='#f8f9fa'
-
+            minH={'185vh'}
 
         >
+            <Heading  fontSize={'30px'} > RemeD </Heading>
             <SimpleGrid
-                columns={2}
                 spacing="100px"
                 height='500px'
                 m='auto'
-                shadow='dark-lg'
                 p={8}
             >
 
+              
                 <Box
-                    height="450px"
-                    w='400px'
-                    display={'flex'}
-                    alignItems="center"
-                >
-                    <Image
-                        src='https://www.bmoharris.com/img/main/personal/debit-cards/cards/large/bmoharris-debitcard.jpg'
-                    />
-                </Box>
-                <Box
+                    margin={'auto'}
+                    
+                    pt={'90px'}
                     height="450px"
                     w='400px'>
                     <Text fontSize="50px" color="black" display='flex'>
