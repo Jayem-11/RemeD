@@ -9,22 +9,22 @@ const PatientNotes = () => {
   const [showAddTask, setShowAddTask] = useState(false);
   const [notes, setNotes] = useState([
     {
-      id: 3,
-      text: "Input Medical Details",
-      day: "Feb 24 2021",
+      id: 0,
+      text: "Test text",
+      day: "24/02/2021",
       reminder: true,
     },
     {
       id: 78,
       text: "Input Prescriptions",
-      day: "September 3 2017",
+      day: "25/02/2021",
       reminder: true,
     },
 
     {
       id: 4,
       text: " Next Date Scheduled",
-      day: "June 2 2022",
+      day: "27/02/2021",
       reminder: true,
     },
   ]);
@@ -54,7 +54,7 @@ const PatientNotes = () => {
       <Flex justifyContent="center">
         <Box
           w={900}
-          h={"125vh"}
+          h={"100%"}
           minH={"300px"}
           p="30px"
           borderRadius={"5px"}
