@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+
 import {
     Box,
     Button,
@@ -123,12 +124,14 @@ const PatientSignup = () => {
             <Heading
                 pt={"30px"}
                 mb={"10px"}
-                textShadow="md"
+
+                textShadow='md'
                 textAlign={"flex-start"}
                 color={"black.700"}
                 lineHeight={1.1}
                 // fontSize={{ base: '2xl', sm: '3xl', md: '4xl' }}
                 fontSize={"48px"}
+                
             >
                 Patient SignUp
             </Heading>
@@ -175,7 +178,8 @@ const PatientSignup = () => {
                         <Heading
                             lineHeight={1.0}
                             fontSize={'50px'}       
-                            fontFamily={'inherit'}                 >
+                            fontFamily={'inherit'}  
+                            fontFamily={'Fascinate Inline'}               >
                             
                         We Care For You! 
                         </Heading>
