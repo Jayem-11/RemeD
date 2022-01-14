@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+
 import {
     Box,
     Button,
@@ -15,7 +16,11 @@ import {
     TabPanels,
     TabPanel,
     Text,
-    Select
+    Select,
+    Stack,
+    HStack,
+    Container,
+    SimpleGrid
 } from "@chakra-ui/react";
 import auth from "../../services/auth";
 import { signup } from "../../services/user";
@@ -105,33 +110,45 @@ const PatientSignup = () => {
 
     return (
         <Box
-            bgImg="https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            bgImage={'https://media.gettyimages.com/photos/stethoscope-picture-id184990068?k=20&m=184990068&s=612x612&w=0&h=wWa7AZOxLagcpHzgBjGFJTvgiNnA7R_6KvsnCSt0nUM='}
             bgRepeat="no-repeat"
-            shadow="lg"
-            borderRadius="25% 0px 0px "
+            
+            backgroundSize={'contain'}
+            backgroundColor={'white'}
+            // borderRadius="25% 0px 0px "
                         
-        >
+         >
+
+          <HStack spacing='950px'>
+            <Box >
             <Heading
                 pt={"30px"}
                 mb={"10px"}
-                textShadow="md"
+
+                textShadow='md'
                 textAlign={"flex-start"}
-                color={"gray.700"}
+                color={"black.700"}
                 lineHeight={1.1}
                 // fontSize={{ base: '2xl', sm: '3xl', md: '4xl' }}
                 fontSize={"48px"}
+                
             >
                 Patient SignUp
             </Heading>
+            {/* <Text fontFamily={'Poppins'} fontSize={'20px'} display={'flex'} align-placeItems={'center'}>
+                We Care!
+            </Text> */}
 
-            <Box
+            </Box>
+          <Box  
                 position="relative"
                 display="flex"
                 justifyContent="flex-end"
+                alignItems={'end'}
                 pt={4}
-                pr={4}
-            >
-                <Button
+                
+                >
+             <Button
                     bgColor="primary"
                     onClick={() => history.goBack()}
                     _hover={{
@@ -141,17 +158,44 @@ const PatientSignup = () => {
                 >
                     « Back
                 </Button>
+          </Box>
+  
+  
+          </HStack>
+          <Stack direction={['column', 'row']} spacing='500px'  >
+            
+            <Box position={"relative"} minH={"96.3vH"}>
+                <Container
+                    as={SimpleGrid}
+                    maxW={"7xl"}
+                    columns={{ base: 1, md: 2 }}
+                    // spacing={{ base: 10, lg: 32 }}
+                    mt={"20px"}
+
+                // py={{ base: 10, sm: 20, lg: 32 }}
+                >
+                    <Stack spacing={{ base: 1, md: 20 }}>
+                        <Heading
+                            lineHeight={1.0}
+                            fontSize={'50px'}       
+                            fontFamily={'inherit'}  
+                            fontFamily={'Fascinate Inline'}               >
+                            
+                        We Care For You! 
+                        </Heading>
+                    </Stack>
+                </Container>
             </Box>
+            
+            <Box>
             <Flex width="full" height={"100vh"} justifyContent="flex-end" pr={8}>
                 <Box
                     mb={6}
                     mt={2}
                     p={8}
-                    w="450px"
+                    w="500px"
                     borderWidth={2}
-                    borderRadius={8}
-                    boxShadow="dark-lg"
-                    bgColor="azure"
+                    bgColor='whiteAlpha.300'
                     alignItems="flex-end"
                     height="98vh"
                 >
@@ -354,7 +398,13 @@ const PatientSignup = () => {
                     </Box>
                 </Box>
             </Flex>
-        </Box>
+           </Box>
+           </Stack>
+         </Box>
+        
     );
+     
+         
+   
 };
 export default PatientSignup;

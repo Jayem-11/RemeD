@@ -69,7 +69,7 @@ const Hero = ({ title, subtitle, image, ctaLink, ctaText, ...rest }) => {
       </Stack>
       <Box w={{ base: "80%", sm: "60%", md: "50%" }} mb={{ base: 12, md: 0 }}>
         {/* TODO: Make this change every X secs */}
-        <Image src={image} size="100%" rounded="1rem" shadow="2xl" />
+        
       </Box>
     </Flex>
   );
