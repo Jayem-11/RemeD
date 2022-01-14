@@ -69,7 +69,7 @@ export default function Login() {
                 auth.authenticate(data, () => {
                     console.log(data)
                     formik.resetForm()
-                    history.push(data.isDoctor ? '/dashboard/doctor' : '/dashboard/patient')
+                    history.push(data["isDoctor"] ? '/dashboard/doctor' : '/dashboard/patient')
                 })
             }
         })
