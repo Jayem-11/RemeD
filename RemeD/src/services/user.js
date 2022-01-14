@@ -92,7 +92,7 @@ const fetchSendbirdUsers = async () => {
             }
         }
         let resp = await axios.get(`https://api-${SEND_APP_ID}.sendbird.com/v3/users`, config);
-        return await resp.data;
+        return await resp.data.users;
     } catch (err) {
         console.log(err)
     }

@@ -127,9 +127,9 @@ export default function Login() {
                             </FormControl>
                             <Stack spacing={5}>
                                 <Link color={"blue.400"}>Forgot password?</Link>
-                                <Link href="/signup" color={"blue.400"}>
+                                <Text onClick={() => history.push('/signup')} cursor={'pointer'} color={"blue.400"}>
                                     Don't have an account?
-                                </Link>
+                                </Text>
                                 <Button
                                     type="submit"
                                     bg={"blue.400"}

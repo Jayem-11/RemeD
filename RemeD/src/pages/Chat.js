@@ -4,7 +4,7 @@ import { App } from "sendbird-uikit";
 import "sendbird-uikit/dist/index.css";
 import NavBar from "../components/Sections/Navbar/NavBar";
 import auth from '../services/auth'
-import getCustomPaginatedQuery from './CustomUserQuery';
+// import getCustomPaginatedQuery from './CustomUserQuery';
 
 const styles = {
     fontFamily: "san-serif",
@@ -45,7 +45,7 @@ const Chat = () => {
     return (
         <div style={styles}>
             <NavBar />
-            <App appId={SEND_APP_ID} userId={auth.isAuthenticated()._id} userListQuery={getCustomPaginatedQuery} />
+            <App appId={SEND_APP_ID} userId={auth.isAuthenticated()._id} nickname={auth.isAuthenticated().firstname} />
         </div>
     );
 };

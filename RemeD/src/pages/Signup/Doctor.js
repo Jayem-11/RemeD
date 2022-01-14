@@ -11,7 +11,6 @@ import {
     Avatar,
     AvatarGroup,
     useBreakpointValue,
-    HStack,
     useToast,
     Tabs,
     Tab,
@@ -88,7 +87,7 @@ export default function DoctorSignup() {
 
     useEffect(() => {
         if (msg !== null) {
-            signupErr();
+             return signupErr();
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [msg]);
@@ -239,7 +238,7 @@ export default function DoctorSignup() {
                         </Stack>
                     </Stack>
                     <Stack
-                        bg={"gray.50"}
+                        bg={"gray.700"}
                         rounded={"xl"}
                         p={{ base: 4, sm: 6, md: 8 }}
                         spacing={{ base: 8 }}
@@ -332,6 +331,17 @@ export default function DoctorSignup() {
                                                 </Text>
                                             )}
                                         </FormControl>
+                                        <Button
+                                            variantColor="primary.500"
+                                            variant="outline"
+                                            width="full"
+                                            mt={4}
+                                            type="submit"
+                                            onClick={() => setTabIndex(1)}
+                                            size='sm'
+                                        >
+                                            Next
+                                        </Button>
                                     </TabPanel>
                                     <TabPanel>
                                         <FormControl isRequired>
@@ -424,21 +434,28 @@ export default function DoctorSignup() {
                                                 </Text>
                                             )}
                                         </FormControl>
+                                        <Flex>
                                         <Button
-                                            w={"150px"}
-                                            h={"40px"}
-                                            mt={"17px"}
-                                            ml={"135px"}
-                                            type={'submit'}
-                                            bg={"black"}
-                                            color={"white"}
-                                            _hover={{
-                                                bg: "gray.900",
-                                            }}
+                                            variantColor="primary.500"
+                                            variant="outline"
+                                            width="full"
+                                            mt={4}
+                                            type="submit"
+                                            onClick={() => setTabIndex(0)}
+                                        >
+                                            Prev
+                                        </Button>
+                                        <Button
+                                            variantColor="primary.500"
+                                            variant="outline"
+                                            width="full"
+                                            mt={4}
+                                            type="submit"
                                             onClick={() => formik.handleSubmit()}
                                         >
-                                            Submit
+                                            Sign Up
                                         </Button>
+                                    </Flex>
                                     </TabPanel>
                                 </TabPanels>
                             </Tabs>

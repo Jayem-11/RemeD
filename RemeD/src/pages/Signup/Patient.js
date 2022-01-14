@@ -110,11 +110,11 @@ const PatientSignup = () => {
 
     return (
         <Box
-            bgImage={'https://media.gettyimages.com/photos/stethoscope-picture-id184990068?k=20&m=184990068&s=612x612&w=0&h=wWa7AZOxLagcpHzgBjGFJTvgiNnA7R_6KvsnCSt0nUM='}
+            bgImage={'https://thumbs.dreamstime.com/b/healthcare-medical-concept-medicine-doctor-stethoscope-hand-patients-come-to-hospital-background-179931139.jpg'}
             bgRepeat="no-repeat"
             
-            backgroundSize={'contain'}
-            backgroundColor={'white'}
+            backgroundSize={'cover'}
+            backgroundColor={'gray.800'}
             // borderRadius="25% 0px 0px "
                         
          >
@@ -131,6 +131,7 @@ const PatientSignup = () => {
                 lineHeight={1.1}
                 // fontSize={{ base: '2xl', sm: '3xl', md: '4xl' }}
                 fontSize={"48px"}
+                
                 
             >
                 Patient SignUp
@@ -178,16 +179,15 @@ const PatientSignup = () => {
                         <Heading
                             lineHeight={1.0}
                             fontSize={'50px'}       
-                            fontFamily={'inherit'}  
-                            fontFamily={'Fascinate Inline'}               >
+                        >
                             
-                        We Care For You! 
+                        WE CARE FOR YOU
                         </Heading>
                     </Stack>
                 </Container>
             </Box>
             
-            <Box>
+            <Box bg={'gray.800'}>
             <Flex width="full" height={"100vh"} justifyContent="flex-end" pr={8}>
                 <Box
                     mb={6}
@@ -195,7 +195,7 @@ const PatientSignup = () => {
                     p={8}
                     w="500px"
                     borderWidth={2}
-                    bgColor='whiteAlpha.300'
+                    bgColor='azure'
                     alignItems="flex-end"
                     height="98vh"
                 >
@@ -212,7 +212,7 @@ const PatientSignup = () => {
                                         <Input
                                             type="text"
                                             {...formik.getFieldProps("firstname")}
-                                            placeholder="Shakira"
+                                            placeholder="Arthur"
                                         />
                                         {formik.errors.firstname && (
                                             <Text fontSize={"xs"} color={"red.400"}>
@@ -225,7 +225,7 @@ const PatientSignup = () => {
                                         <Input
                                             type="text"
                                             {...formik.getFieldProps("lastname")}
-                                            placeholder="Don"
+                                            placeholder="Tutu"
                                         />
                                         {formik.errors.lastname && (
                                             <Text fontSize={"xs"} color={"red.400"}>
