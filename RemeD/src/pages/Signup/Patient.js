@@ -125,7 +125,7 @@ const PatientSignup = () => {
 
                 textShadow='md'
                 textAlign={"flex-start"}
-                color={"black.700"}
+                color={"white"}
                 lineHeight={1.1}
                 // fontSize={{ base: '2xl', sm: '3xl', md: '4xl' }}
                 fontSize={"48px"}
@@ -176,7 +176,8 @@ const PatientSignup = () => {
                     <Stack spacing={{ base: 1, md: 20 }}>
                         <Heading
                             lineHeight={1.0}
-                            fontSize={'50px'}       
+                            fontSize={'50px'}
+                            color={'white'}       
                         >
                             
                         WE CARE FOR YOU
@@ -198,7 +199,7 @@ const PatientSignup = () => {
                     height="98vh"
 
                 >
-                    <Box my={4} textAlign="left">
+                    <Box my={4} textAlign="left" color={'white'}>
                         <Tabs index={tabIndex} isManual onChange={handleTabChange} isFitted variant="enclosed">
                             <TabList mb="1em">
                                 <Tab>Signup</Tab>
