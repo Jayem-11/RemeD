@@ -88,7 +88,7 @@ export default function DoctorSignup() {
 
     useEffect(() => {
         if (msg !== null) {
-            signupErr();
+             return signupErr();
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [msg]);
