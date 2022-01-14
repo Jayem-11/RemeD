@@ -112,9 +112,7 @@ const PatientSignup = () => {
         <Box
             bgImage={'https://thumbs.dreamstime.com/b/healthcare-medical-concept-medicine-doctor-stethoscope-hand-patients-come-to-hospital-background-179931139.jpg'}
             bgRepeat="no-repeat"
-            
             backgroundSize={'cover'}
-            backgroundColor={'gray.800'}
             // borderRadius="25% 0px 0px "
                         
          >
@@ -187,7 +185,7 @@ const PatientSignup = () => {
                 </Container>
             </Box>
             
-            <Box bg={'gray.800'}>
+            <Box >
             <Flex width="full" height={"100vh"} justifyContent="flex-end" pr={8}>
                 <Box
                     mb={6}
@@ -195,9 +193,10 @@ const PatientSignup = () => {
                     p={8}
                     w="500px"
                     borderWidth={2}
-                    bgColor='azure'
+                    bgColor='gray.800'
                     alignItems="flex-end"
                     height="98vh"
+
                 >
                     <Box my={4} textAlign="left">
                         <Tabs index={tabIndex} isManual onChange={handleTabChange} isFitted variant="enclosed">
