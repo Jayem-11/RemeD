@@ -16,7 +16,7 @@ import Logo from "../../../assets/Logo";
 import { useHistory } from "react-router-dom";
 import auth from "../../../services/auth";
 
-const UserInfo = sessionStorage.getItem("userInfo");
+// const UserInfo = sessionStorage.getItem("userInfo");
 // {"_id":"619e1ed3aa5478ce609df89c",
 // "firstname":"Joan",
 // "lastname":"Sloan",
@@ -99,7 +99,7 @@ const NavBar = (props) => {
           direction={["column", "row", "row", "row"]}
           pt={[4, 4, 0, 0]}
         >
-          <MenuItems to={UserInfo["isDoctor"]? '/dashboard/doctor': "/dashboard/patient"}>Dashboard</MenuItems>
+          <MenuItems to={auth.isAuthenticated().isDoctor ? '/dashboard/doctor': "/dashboard/patient"}>Dashboard</MenuItems>
           <MenuItems to="/chat">Chats </MenuItems>
           <MenuItems to="/login" isLast>
             <Button
@@ -129,11 +129,11 @@ const NavBar = (props) => {
               />
             </MenuButton>
             <MenuList>
-                <MenuItem onClick={() => history.push(UserInfo["isDoctor"]? '/profile/doctor': "/profile/patient")}>
+                <MenuItem onClick={() => history.push(auth.isAuthenticated().isDoctor ? '/profile/doctor': "/profile/patient")}>
                 👤 Profile
                 </MenuItem>
               </MenuList>
-            {UserInfo["isDoctor"] && (
+            {auth.isAuthenticated().isDoctor && (
               <MenuList>
                 <MenuItem onClick={() => history.push("/notes")}>
                   📝 Notes

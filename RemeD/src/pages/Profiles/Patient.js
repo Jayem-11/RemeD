@@ -27,9 +27,9 @@ import { CgNotes } from "react-icons/cg";
 
 const data = {
   imageURL: spencer,
-  name: "Misande Rono",
+  name: "Spencer Brown",
   phoneno: "+254712345678",
-  email: "misande@gmail.com",
+  email: "spencer@gmail.com",
 };
 
 const Rating = ({ rating, numReviews }) => {
@@ -95,7 +95,7 @@ const Patient = () => {
             >
               Back to Dashboard
             </Button>
-            <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
+            <Heading color={'gray.800'} fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
               <Text
                 as={"span"}
                 position={"relative"}
