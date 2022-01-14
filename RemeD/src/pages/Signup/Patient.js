@@ -114,7 +114,7 @@ const PatientSignup = () => {
             bgRepeat="no-repeat"
             
             backgroundSize={'cover'}
-            
+            backgroundColor={'gray.800'}
             // borderRadius="25% 0px 0px "
                         
          >
@@ -179,8 +179,7 @@ const PatientSignup = () => {
                         <Heading
                             lineHeight={1.0}
                             fontSize={'50px'}       
-                            fontFamily={'inherit'}  
-                            fontFamily={'Fascinate Inline'}               >
+                        >
                             
                         WE CARE FOR YOU
                         </Heading>
@@ -188,7 +187,7 @@ const PatientSignup = () => {
                 </Container>
             </Box>
             
-            <Box>
+            <Box bg={'gray.800'}>
             <Flex width="full" height={"100vh"} justifyContent="flex-end" pr={8}>
                 <Box
                     mb={6}
