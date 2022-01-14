@@ -163,7 +163,7 @@ const PatientSignup = () => {
           </HStack>
           <Stack direction={['column', 'row']} spacing='500px'  >
             
-            <Box position={"relative"} minH={"96.3vH"}>
+            <Box position={"relative"} minH={"96.3vh"}>
                 <Container
                     as={SimpleGrid}
                     maxW={"7xl"}
